@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #fff;
+  color: #111;
+}
+
+.text-danger {
+  color: #c2185b !important;
+}
+
+.btn-outline-danger {
+  border-color: #c2185b;
+  color: #c2185b;
+}
+
+.btn-outline-danger:hover {
+  background-color: #c2185b;
+  color: white;
+}
+
+.card {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.hero-modelos {
+  min-height: 320px;
+  background: linear-gradient(to right, #ffffff, #f5f5f5);
+  display: flex;
+  align-items: center;
+}/* You can add global styles to this file, and also import other style files */
