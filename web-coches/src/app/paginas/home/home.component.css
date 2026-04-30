@@ -1,0 +1,73 @@
+.home-dark {
+  background: #1b1b1b;
+  min-height: 100vh;
+}
+
+.hero-section {
+  min-height: 720px;
+
+  background-image: url("/assets/imagenes/img.png"); /* 👈 tu imagen */
+  background-size: cover;       /* ocupa todo */
+  background-position: center;  /* centrada */
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+.texto-gradient {
+  background: linear-gradient(90deg, #ff00d4, #8a2cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gradient {
+  background: linear-gradient(90deg, #8a00ff, #ff008c);
+  color: white;
+  border: none;
+}
+
+.btn-gradient:hover {
+  color: white;
+  opacity: 0.9;
+}
+
+.bg-card {
+  background: #10102b;
+}
+
+.placeholder-img {
+  height: 230px;
+  background: #222;
+  color: #ff00d4;
+  font-weight: 800;
+}
+
+.btn-outline-gradient {
+  border: 1px solid #b000ff;
+  color: #ff00d4;
+}
+
+.btn-outline-gradient:hover {
+  background: #b000ff;
+  color: white;
+}
+
+.gallery-box {
+  max-width: 520px;
+  height: 330px;
+  background: #000;
+  border: 1px solid #777;
+  color: #ff00d4;
+  font-weight: 800;
+}
+
+.link-gradient {
+  color: #ff00d4;
+}
+
+
+.texto-gradient {
+  background: linear-gradient(90deg, #ff00d4, #8a2cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
