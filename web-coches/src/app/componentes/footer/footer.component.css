@@ -1,0 +1,19 @@
+.footer-dark {
+  background: #0a0a0a;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #ff00d4;
+}
+
+.social {
+  border: 1px solid #fff;
+  padding: 8px 12px;
+  border-radius: 50%;
+  color: #fff;
+}

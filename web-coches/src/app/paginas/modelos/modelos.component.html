@@ -1,0 +1,32 @@
+<section class="hero-modelos py-5">
+  <div class="container">
+    <h1 class="fw-bold display-5">
+      Encuentra tu próximo <span class="text-danger">reto</span>
+    </h1>
+
+    <input
+      class="form-control form-control-lg mt-4 w-50"
+      placeholder="Buscar coches por marca o modelo..."
+    >
+  </div>
+</section>
+
+<section class="container py-5">
+  <h2 class="text-center fw-bold mb-4">Modelos disponibles</h2>
+
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let coche of coches">
+      <div class="card h-100 shadow-sm">
+        <img [src]="coche.imagen" class="card-img-top" [alt]="coche.nombre">
+
+        <div class="card-body">
+          <h5 class="card-title fw-bold">{{ coche.nombre }}</h5>
+          <p class="text-danger fw-bold">
+            Desde {{ coche.precio | currency:'EUR' }}
+          </p>
+          <a class="btn btn-outline-danger w-100">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
