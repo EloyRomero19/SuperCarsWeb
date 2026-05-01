@@ -1,98 +1,126 @@
-<main class="home-dark">
+<!-- HERO -->
+<section class="hero d-flex align-items-center text-white">
+  <div class="container">
+    <h1 class="display-4 fw-bold text-uppercase">
+      DESCUBRE LOS <br>
+      MEJORES <br>
+      <span class="text-gradient">SUPERDEPORTIVOS</span>
+    </h1>
 
-  <section class="hero-section d-flex align-items-center">
-    <div class="container">
-      <h1 class="display-3 fw-bold text-uppercase lh-1 text-light">
-        DESCUBRE LOS <br>
-        MEJORES <br>
-        <span class="texto-gradient">SUPERDEPORTIVOS</span>
-      </h1>
+    <p class="lead mb-4">
+      Los autos más exclusivos y veloces del planeta te esperan
+    </p>
 
-      <p class="fs-5 text-light opacity-75 my-4">
-        Los autos más exclusivos y veloces del planeta te esperan
-      </p>
+    <a class="btn btn-gradient btn-lg">Ver modelos</a>
+  </div>
+</section>
 
-      <a routerLink="/modelos" class="btn btn-gradient">
-        Ver modelos
-      </a>
-    </div>
-  </section>
-
-  <section class="container py-5">
-    <h2 class="section-title">MODELOS DESTACADOS</h2>
-
-    <div class="row g-4 mt-4">
-      <div class="col-md-4">
-        <div class="card car-card">
-          <div class="car-img">Imagen Lamborghini</div>
-          <div class="card-body text-center">
-            <h4>Lamborghini Aventador SVJ</h4>
-            <a routerLink="/modelos" class="btn btn-outline-gradient">Ver más</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card car-card">
-          <div class="car-img">Imagen Ferrari</div>
-          <div class="card-body text-center">
-            <h4>Ferrari F8 Tributo</h4>
-            <a routerLink="/modelos" class="btn btn-outline-gradient">Ver más</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card car-card">
-          <div class="car-img">Imagen McLaren</div>
-          <div class="card-body text-center">
-            <h4>McLaren 720S</h4>
-            <a routerLink="/modelos" class="btn btn-outline-gradient">Ver más</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container py-5 text-center">
-    <h2 class="section-title mb-5">GALERÍA EXCLUSIVA</h2>
-
-    <div class="gallery-box mx-auto">
-      Imagen galería
-    </div>
-
-    <div class="mt-4">
-      <button class="btn btn-gallery me-2">‹</button>
-      <button class="btn btn-gallery">›</button>
-    </div>
-  </section>
-
-  <section class="container py-5">
-    <h2 class="section-title mb-5">ÚLTIMAS NOTICIAS</h2>
+<!-- MODELOS -->
+<section class="modelos-section py-5 bg-dark-custom text-white">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5">MODELOS DESTACADOS</h2>
 
     <div class="row g-4">
-      <div class="col-md-6">
-        <div class="news-card">
-          <h4>Nuevos Lanzamientos 2026</h4>
-          <p>
-            Descubre los últimos superdeportivos que llegan este año con
-            tecnología híbrida y diseños extremos.
-          </p>
-          <a routerLink="/noticias">Leer más →</a>
+
+      <div class="col-md-4">
+        <div class="card bg-card text-white border-0 h-100 overflow-hidden">
+
+          <!-- VIDEO -->
+          <video
+            class="card-img-top video-card"
+            muted
+            loop
+            playsinline
+          >
+            <source src="assets/videos/3066463-uhd_4096_2160_24fps.mp4" type="video/mp4">
+          </video>
+
+          <!-- TEXTO -->
+          <div class="card-body text-center">
+            <h5 class="fw-bold">Lamborghini Aventador SVJ</h5>
+            <a class="btn btn-outline-purple mt-2">Ver más</a>
+          </div>
+
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="news-card">
-          <h4>Eventos de Velocidad</h4>
-          <p>
-            Conoce los eventos más exclusivos del mundo del motor,
-            circuitos y presentaciones privadas.
-          </p>
-          <a routerLink="/noticias">Leer más →</a>
+      <div class="col-md-4">
+        <div class="card bg-card text-white border-0 h-100 overflow-hidden">
+
+          <!-- VIDEO -->
+          <video
+            class="card-img-top video-card"
+            src="assets/videos/lamborghini.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+
+          <!-- TEXTO -->
+          <div class="card-body text-center">
+            <h5 class="fw-bold">FERRARI F8 TRIBUTO</h5>
+            <a class="btn btn-outline-purple mt-2">Ver más</a>
+          </div>
+
         </div>
       </div>
+
+      <div class="col-md-4">
+        <div class="card bg-card text-white border-0 h-100 overflow-hidden">
+
+          <!-- VIDEO -->
+          <video
+            class="card-img-top video-card"
+            src="assets/videos/lamborghini.mp4"
+            autoplay
+            muted
+            loop
+            playsinline>
+          </video>
+
+          <!-- TEXTO -->
+          <div class="card-body text-center">
+            <h5 class="fw-bold">McLaren 720S</h5>
+            <a class="btn btn-outline-purple mt-2">Ver más</a>
+          </div>
+
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-</main>
+<!-- CARRUSEL -->
+<section class="py-5 bg-dark-custom text-white">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-5">GALERÍA EXCLUSIVA</h2>
+
+    <div id="carouselCars" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+
+        <div class="carousel-item active">
+          <img src="assets/img/galeria1.jpg" class="d-block w-100 carousel-img">
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/galeria2.jpg" class="d-block w-100 carousel-img">
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/galeria3.jpg" class="d-block w-100 carousel-img">
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselCars" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselCars" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>

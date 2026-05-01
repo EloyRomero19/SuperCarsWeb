@@ -1,73 +1,38 @@
-.home-dark {
-  background: #1b1b1b;
-  min-height: 100vh;
+.hero {
+  min-height: 750px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.85), rgba(0,0,0,.4)),
+    url("../../../assets/imagenes/nika-qufarashvili-lSTN0nYAUKA-unsplash.jpg") center/cover no-repeat;
 }
 
-.hero-section {
-  min-height: 720px;
-
-  background-image: url("/assets/imagenes/img.png"); /* 👈 tu imagen */
-  background-size: cover;       /* ocupa todo */
-  background-position: center;  /* centrada */
-  background-repeat: no-repeat;
-
-  position: relative;
-}
-
-.texto-gradient {
-  background: linear-gradient(90deg, #ff00d4, #8a2cff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.btn-gradient {
-  background: linear-gradient(90deg, #8a00ff, #ff008c);
-  color: white;
-  border: none;
-}
-
-.btn-gradient:hover {
-  color: white;
-  opacity: 0.9;
-}
-
-.bg-card {
-  background: #10102b;
-}
-
-.placeholder-img {
+.video-card {
   height: 230px;
-  background: #222;
-  color: #ff00d4;
-  font-weight: 800;
+  object-fit: cover;
 }
 
-.btn-outline-gradient {
-  border: 1px solid #b000ff;
-  color: #ff00d4;
+.carousel-img {
+  height: 500px;
+  object-fit: cover;
 }
 
-.btn-outline-gradient:hover {
-  background: #b000ff;
-  color: white;
+.hero {
+  position: relative;
+  z-index: 2;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  box-shadow: 0 45px 80px rgba(0, 0, 0, 0.85);
 }
 
-.gallery-box {
-  max-width: 520px;
-  height: 330px;
-  background: #000;
-  border: 1px solid #777;
-  color: #ff00d4;
-  font-weight: 800;
+.modelos-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 120px !important;
+  margin-top: -20px;
 }
 
-.link-gradient {
-  color: #ff00d4;
-}
-
-
-.texto-gradient {
-  background: linear-gradient(90deg, #ff00d4, #8a2cff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.video-card {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
 }
