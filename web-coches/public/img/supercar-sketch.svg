@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-labelledby="title desc">
+  <title id="title">Superdeportivo dibujado</title>
+  <desc id="desc">Ilustracion lineal de un superdeportivo con edificios al fondo.</desc>
+  <rect width="720" height="360" fill="#fff"/>
+  <g fill="none" stroke="#171717" stroke-linecap="round" stroke-linejoin="round">
+    <g stroke-width="2" opacity=".55">
+      <path d="M438 120V55h22v87M486 137V38h31v111M542 139V72h20v67M598 143V91h29v52M377 141V85h18v54"/>
+      <path d="M360 144h285M342 158c33-26 77-40 130-41 57-1 118 16 177 51"/>
+      <path d="M434 92h10M434 111h10M494 63h9M494 84h9M494 106h9M604 112h12M604 130h12"/>
+    </g>
+    <g stroke-width="4">
+      <path d="M67 235c17-37 53-68 101-78l138-20c64-44 148-56 250-34 35 8 67 28 92 58 18 3 29 16 35 39l-11 36H67z"/>
+      <path d="M247 151c61-42 147-54 248-31l42 47-199 4-91-20z"/>
+      <path d="M298 153l46-33M418 120l-16 50M516 127l-42 41"/>
+      <path d="M106 202l71-18 41 22-124 13M561 186l78 12M278 204l223-6"/>
+      <path d="M216 237c1-35 29-63 64-63s62 28 63 63M536 237c1-32 26-57 58-57 31 0 56 25 58 57"/>
+    </g>
+    <g stroke-width="6">
+      <circle cx="280" cy="237" r="42"/>
+      <circle cx="594" cy="237" r="38"/>
+    </g>
+    <g stroke-width="3">
+      <circle cx="280" cy="237" r="18"/>
+      <circle cx="594" cy="237" r="16"/>
+      <path d="M280 195v84M238 237h84M250 207l60 60M310 207l-60 60M594 199v76M556 237h76M568 211l52 52M620 211l-52 52"/>
+      <path d="M128 255h86M366 258h121M42 274h611"/>
+    </g>
+  </g>
+  <path d="M64 237h612" stroke="#b83363" stroke-width="4" stroke-linecap="round" opacity=".85"/>
+</svg>
