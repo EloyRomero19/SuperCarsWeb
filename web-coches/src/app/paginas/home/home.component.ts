@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { CochesService } from '../../servicios/coches.service';
-
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -12,18 +10,33 @@ import { CochesService } from '../../servicios/coches.service';
 })
 export class HomeComponent implements OnInit {
 
-  cochesDestacados: any[] = [];
+  galeria: string[] = [
+    'assets/imagenes/amg.jpg',
+    'assets/imagenes/bmwm8.jpg',
+    'assets/imagenes/bugatty1_imagen.png'
+  ];
 
-  constructor(private cochesService: CochesService) {}
+  activeIndex: number = 0;
 
-  ngOnInit(): void {
-    this.cochesService.obtenerCochesFerrari().subscribe({
-      next: (data: any[]) => {
-        this.cochesDestacados = data.slice(0, 3);
-      },
-      error: (error: any) => {
-        console.error('Error al cargar coches:', error);
-      }
-    });
+  ngOnInit(): void {}
+
+  nextSlide(): void {
+    this.activeIndex = (this.activeIndex + 1) % this.galeria.length;
+  }
+
+  prevSlide(): void {
+    this.activeIndex =
+      (this.activeIndex - 1 + this.galeria.length) % this.galeria.length;
+  }
+
+  getSlideClass(i: number): string {
+    const total = this.galeria.length;
+    const diff = (i - this.activeIndex + total) % total;
+
+    if (diff === 0) return 'active';
+    if (diff === 1) return 'right';
+    if (diff === total - 1) return 'left';
+
+    return 'd-none';
   }
 }
