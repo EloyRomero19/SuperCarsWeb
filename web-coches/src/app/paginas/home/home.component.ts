@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  Inject,
+  PLATFORM_ID
+} from '@angular/core';
+
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -8,35 +15,70 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit {
 
-  galeria: string[] = [
+  galeria = [
+    'assets/imagenes/svj.jpg',
+    'assets/imagenes/porsche.jpg',
+    'assets/imagenes/jesko.jpg',
+    'assets/imagenes/f40.jpg',
     'assets/imagenes/amg.jpg',
-    'assets/imagenes/bmwm8.jpg',
-    'assets/imagenes/bugatty1_imagen.png'
+    'assets/imagenes/bmwm8.jpg'
   ];
 
-  activeIndex: number = 0;
+  rotation = 0;
+  radius = 420;
 
-  ngOnInit(): void {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
-  nextSlide(): void {
-    this.activeIndex = (this.activeIndex + 1) % this.galeria.length;
+  ngAfterViewInit(): void {
+
+    if (isPlatformBrowser(this.platformId)) {
+
+      const videos = document.querySelectorAll('video');
+
+      videos.forEach((video: HTMLVideoElement) => {
+        video.muted = true;
+        video.volume = 0;
+        video.load();
+
+        video.addEventListener(
+          'canplay',
+          () => video.play().catch(() => {}),
+          { once: true }
+        );
+      });
+
+    }
   }
 
-  prevSlide(): void {
-    this.activeIndex =
-      (this.activeIndex - 1 + this.galeria.length) % this.galeria.length;
+  nextSlide() {
+    this.rotation -= 360 / this.galeria.length;
   }
 
-  getSlideClass(i: number): string {
-    const total = this.galeria.length;
-    const diff = (i - this.activeIndex + total) % total;
+  prevSlide() {
+    this.rotation += 360 / this.galeria.length;
+  }
 
-    if (diff === 0) return 'active';
-    if (diff === 1) return 'right';
-    if (diff === total - 1) return 'left';
+  getTransform(i: number): string {
+    const step = 360 / this.galeria.length;
 
-    return 'd-none';
+    return `
+      translate(-50%, -50%)
+      rotateY(${step * i}deg)
+      translateZ(${this.radius}px)
+    `;
+  }
+
+  getActive(i: number): boolean {
+    const step = 360 / this.galeria.length;
+
+    const index =
+      ((-this.rotation / step) % this.galeria.length + this.galeria.length)
+      % this.galeria.length;
+
+    return Math.round(index) === i;
   }
 }

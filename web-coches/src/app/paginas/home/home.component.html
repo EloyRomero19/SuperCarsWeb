@@ -1,90 +1,93 @@
 <!-- HERO -->
-<section class="hero d-flex align-items-center text-white">
-  <div class="container">
-    <h1 class="display-4 fw-bold text-uppercase">
-      DESCUBRE LOS <br>
-      MEJORES <br>
-      <span class="text-gradient">SUPERDEPORTIVOS</span>
-    </h1>
+<section
+  class="hero-image vh-100 position-relative overflow-hidden d-flex align-items-center"
+>
+  <div class="hero-overlay position-absolute w-100 h-100"></div>
 
-    <p class="lead mb-4">
-      Los autos más exclusivos y veloces del planeta te esperan
-    </p>
+  <div class="container position-relative">
+    <div class="row">
+      <div class="col-lg-6 text-white">
+        <h1 class="display-4 fw-bold text-uppercase">
+          Descubre los mejores<br />
+          <span class="text-gradient">Superdeportivos</span>
+        </h1>
 
-    <a class="btn btn-gradient btn-lg">Ver modelos</a>
+        <p class="lead">
+          Los autos más exclusivos y veloces del planeta te esperan
+        </p>
+
+        <a routerLink="/modelos" class="btn btn-gradient btn-lg px-4">
+          Ver modelos
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- MODELOS -->
-<section class="modelos-section py-5 bg-dark-custom text-white">
+<!-- MODELOS DESTACADOS -->
+<section class="py-5 text-white" id="modelos">
   <div class="container">
-    <h2 class="text-center fw-bold mb-5">MODELOS DESTACADOS</h2>
+    <h2 class="text-center fw-bold">MODELOS DESTACADOS</h2>
 
-    <div class="row g-4">
+    <div class="row g-4 mt-4">
 
+      <!-- CARD 1 -->
       <div class="col-md-4">
-        <div class="card bg-card text-white border-0 h-100 overflow-hidden">
-
-          <!-- VIDEO -->
-          <video
-            class="card-img-top video-card"
-            muted
-            loop
-            playsinline
-          >
-            <source src="assets/videos/3066463-uhd_4096_2160_24fps.mp4" type="video/mp4">
+        <div class="card car-card">
+          <video class="card-img-top" autoplay muted loop playsinline preload="auto">
+            <source
+              src="https://res.cloudinary.com/doiaqcxy9/video/upload/q_auto:good,f_mp4/lambo_a9ven2.mp4"
+              type="video/mp4"
+            />
           </video>
 
-          <!-- TEXTO -->
           <div class="card-body text-center">
-            <h5 class="fw-bold">Lamborghini Aventador SVJ</h5>
-            <a class="btn btn-outline-purple mt-2">Ver más</a>
-          </div>
+            <h5>Lamborghini Aventador SVJ</h5>
 
+            <button class="btn btn-outline-gradient btn-sm">
+              Ver más
+            </button>
+          </div>
         </div>
       </div>
 
+      <!-- CARD 2 -->
       <div class="col-md-4">
-        <div class="card bg-card text-white border-0 h-100 overflow-hidden">
-
-          <!-- VIDEO -->
-          <video
-            class="card-img-top video-card"
-            src="assets/videos/lamborghini.mp4"
-            autoplay
-            muted
-            loop
-            playsinline>
+        <div class="card car-card">
+          <video class="card-img-top" autoplay muted loop playsinline preload="auto">
+            <source
+              src="https://res.cloudinary.com/doiaqcxy9/video/upload/q_auto:good,f_mp4/ferrari_rsmypt.mp4"
+              type="video/mp4"
+            />
           </video>
 
-          <!-- TEXTO -->
           <div class="card-body text-center">
-            <h5 class="fw-bold">FERRARI F8 TRIBUTO</h5>
-            <a class="btn btn-outline-purple mt-2">Ver más</a>
-          </div>
+            <h5>Ferrari F8 Tributo</h5>
 
+            <button class="btn btn-outline-gradient btn-sm">
+              Ver más
+            </button>
+          </div>
         </div>
       </div>
 
+      <!-- CARD 3 -->
       <div class="col-md-4">
-        <div class="card bg-card text-white border-0 h-100 overflow-hidden">
-
-          <!-- VIDEO -->
-          <video
-            class="card-img-top video-card"
-            src="assets/videos/lamborghini.mp4"
-            autoplay
-            muted
-            loop
-            playsinline>
+        <div class="card car-card">
+          <video class="card-img-top" autoplay muted loop playsinline preload="auto">
+            <source
+              src="https://res.cloudinary.com/doiaqcxy9/video/upload/q_auto,f_auto,w_960/mcLaren_e2hqgo.mp4"
+              type="video/mp4"
+            />
           </video>
 
-          <!-- TEXTO -->
           <div class="card-body text-center">
-            <h5 class="fw-bold">McLaren 720S</h5>
-            <a class="btn btn-outline-purple mt-2">Ver más</a>
-          </div>
+            <h5>McLaren 720S</h5>
 
+            <button class="btn btn-outline-gradient btn-sm">
+              Ver más
+            </button>
+          </div>
         </div>
       </div>
 
@@ -92,20 +95,28 @@
   </div>
 </section>
 
-<!-- CARRUSEL -->
-<section class="py-5 text-white bg-dark-custom overflow-hidden">
+<!-- GALERÍA 3D -->
+<section class="py-5 text-white">
   <div class="container text-center">
 
-    <h2 class="fw-bold text-uppercase mb-5">Galería Exclusiva</h2>
+    <h2 class="section-title mb-5">GALERÍA EXCLUSIVA</h2>
 
-    <div class="carousel-3d position-relative mx-auto">
-      <img
-        *ngFor="let img of galeria; let i = index"
-        [src]="img"
-        class="carousel-3d-img rounded"
-        [ngClass]="getSlideClass(i)"
-        alt="Supercar"
+    <div class="carousel-3d">
+      <div
+        class="carousel-track"
+        [style.transform]="'rotateY(' + rotation + 'deg)'"
       >
+
+        <div
+          class="carousel-card"
+          *ngFor="let img of galeria; let i = index"
+          [class.active]="getActive(i)"
+          [style.transform]="getTransform(i)"
+        >
+          <img [src]="img" alt="Supercar" />
+        </div>
+
+      </div>
     </div>
 
     <div class="d-flex justify-content-center gap-3 mt-4">
@@ -116,51 +127,43 @@
   </div>
 </section>
 
-  <!-- ÚLTIMAS NOTICIAS -->
-  <section class="noticias-section py-5 text-white">
-    <div class="container">
+<!-- NOTICIAS -->
+<section class="py-5 text-white">
+  <div class="container">
+    <h2 class="text-center fw-bold">ÚLTIMAS NOTICIAS</h2>
 
-      <h2 class="text-center fw-bold text-uppercase mb-5">
-        ÚLTIMAS NOTICIAS
-      </h2>
+    <div class="row mt-4 g-4">
 
-      <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card bg-panel text-white p-4 rounded-3 h-100">
+          <h5>Nuevos Lanzamientos 2026</h5>
 
-        <div class="col-12 col-md-6">
-          <div class="card noticia-card border-0 h-100">
-            <div class="card-body p-4">
-              <h4 class="fw-bold mb-3">Nuevos Lanzamientos 2026</h4>
+          <p>
+            Descubre los últimos superdeportivos que llegan este año con
+            tecnología híbrida y diseños extremos.
+          </p>
 
-              <p class="mb-4">
-                Descubre los últimos superdeportivos que llegan este año con
-                tecnología híbrida y diseños extremos.
-              </p>
-
-              <a routerLink="/noticias" class="noticia-link fw-bold">
-                Leer más →
-              </a>
-            </div>
-          </div>
+          <a routerLink="/noticias" class="text-gradient fw-semibold">
+            Leer más →
+          </a>
         </div>
-
-        <div class="col-12 col-md-6">
-          <div class="card noticia-card border-0 h-100">
-            <div class="card-body p-4">
-              <h4 class="fw-bold mb-3">Eventos de Velocidad</h4>
-
-              <p class="mb-4">
-                Conoce los eventos más exclusivos del mundo del motor, circuitos
-                y presentaciones privadas.
-              </p>
-
-              <a routerLink="/noticias" class="noticia-link fw-bold">
-                Leer más →
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
 
+      <div class="col-md-6">
+        <div class="card bg-panel text-white p-4 rounded-3 h-100">
+          <h5>Eventos de Velocidad</h5>
+
+          <p>
+            Conoce los eventos más exclusivos del mundo del motor,
+            circuitos y presentaciones privadas.
+          </p>
+
+          <a routerLink="/noticias" class="text-gradient fw-semibold">
+            Leer más →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
