@@ -31,6 +31,10 @@ export class NoticiasComponent implements OnInit, AfterViewInit {
   noticias: Noticia[] = [];
 
   ngOnInit(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     this.noticiasService.obtenerNoticias().subscribe({
       next: (data) => {
         this.noticiaPortada = data.portada;

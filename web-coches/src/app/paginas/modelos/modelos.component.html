@@ -1,32 +1,103 @@
-<section class="hero-modelos py-5">
-  <div class="container">
-    <h1 class="fw-bold display-5">
-      Encuentra tu próximo <span class="text-danger">reto</span>
-    </h1>
-
-    <input
-      class="form-control form-control-lg mt-4 w-50"
-      placeholder="Buscar coches por marca o modelo..."
+<section class="modelos-page text-white">
+  <section class="modelos-hero">
+    <img
+      class="hero-bg"
+      src="assets/imagenes/rear-light-hero-hq.png?v=5"
+      alt=""
     >
-  </div>
-</section>
 
-<section class="container py-5">
-  <h2 class="text-center fw-bold mb-4">Modelos disponibles</h2>
-
-  <div class="row g-4">
-    <div class="col-md-4" *ngFor="let coche of coches">
-      <div class="card h-100 shadow-sm">
-        <img [src]="coche.imagen" class="card-img-top" [alt]="coche.nombre">
-
-        <div class="card-body">
-          <h5 class="card-title fw-bold">{{ coche.nombre }}</h5>
-          <p class="text-danger fw-bold">
-            Desde {{ coche.precio | currency:'EUR' }}
-          </p>
-          <a class="btn btn-outline-danger w-100">Ver más</a>
-        </div>
-      </div>
+    <div class="container hero-content">
+      <p class="hero-kicker">Garaje de élite</p>
+      <h1>Modelos que convierten el asfalto en velocidad</h1>
+      <p>
+        Una selección de supercoches extremos con diseño, potencia y cifras
+        pensadas para acelerar el pulso.
+      </p>
     </div>
-  </div>
+  </section>
+
+  <section class="container modelos-grid-section">
+    <div class="section-heading">
+      <p>Top supercoches</p>
+      <h2>Máquinas listas para despegar</h2>
+    </div>
+
+    <div class="modelos-grid">
+      <article
+        class="speed-card"
+        *ngFor="let coche of coches; trackBy: trackById"
+        [class.is-flipped]="cardActiva === coche.id"
+      >
+        <div class="card-orbit"></div>
+
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <div class="speed-line"></div>
+
+            <div class="card-image-wrap">
+              <img [src]="coche.imagen" [alt]="coche.marca + ' ' + coche.modelo">
+            </div>
+
+            <div class="card-copy">
+              <div>
+                <span class="tag">{{ coche.etiqueta }}</span>
+                <h3>{{ coche.marca }} <strong>{{ coche.modelo }}</strong></h3>
+              </div>
+
+              <button type="button" (click)="alternarCard(coche.id)">
+                Ver más
+              </button>
+            </div>
+          </div>
+
+          <div class="card-face card-back">
+            <div class="back-top">
+              <img
+                *ngIf="coche.logo"
+                [src]="coche.logo"
+                [alt]="'Logo ' + coche.marca"
+              >
+              <div>
+                <span>{{ coche.marca }}</span>
+                <h3>{{ coche.modelo }}</h3>
+              </div>
+            </div>
+
+            <p class="descripcion">{{ coche.descripcion }}</p>
+
+            <div class="spec-grid">
+              <div>
+                <span>Potencia</span>
+                <strong>{{ coche.potencia }}</strong>
+              </div>
+              <div>
+                <span>Vel. máxima</span>
+                <strong>{{ coche.velocidadMaxima }}</strong>
+              </div>
+              <div>
+                <span>0-100</span>
+                <strong>{{ coche.aceleracion }}</strong>
+              </div>
+              <div>
+                <span>Motor</span>
+                <strong>{{ coche.motor }}</strong>
+              </div>
+              <div>
+                <span>Par</span>
+                <strong>{{ coche.par }}</strong>
+              </div>
+              <div>
+                <span>Tracción</span>
+                <strong>{{ coche.traccion }}</strong>
+              </div>
+            </div>
+
+            <button type="button" class="back-button" (click)="alternarCard(coche.id)">
+              Volver
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 </section>
