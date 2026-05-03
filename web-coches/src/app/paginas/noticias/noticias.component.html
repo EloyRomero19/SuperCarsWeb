@@ -1,4 +1,4 @@
-x<section class="news-hero d-flex align-items-center text-white">
+<section class="news-hero d-flex align-items-center text-white">
   <div class="container pb-5">
 
     <div class="d-flex gap-2 mb-3 pt-5">
@@ -26,7 +26,7 @@ x<section class="news-hero d-flex align-items-center text-white">
       class="btn btn-gradient rounded-pill px-4"
       data-bs-toggle="modal"
       data-bs-target="#modalNoticia"
-      (click)="abrirModal(noticias[0])"
+      (click)="noticias[0] && abrirModal(noticias[0])"
     >
       Leer artículo
     </button>
