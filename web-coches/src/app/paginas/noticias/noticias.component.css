@@ -1,18 +1,20 @@
 :host {
   display: block;
-}
-
-/* Fondo general de la página */
-body {
-  background: #12132b; /* Gris oscuro que se usa en tu archivo CSS */
+  min-height: 100vh;
   color: white;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(123, 44, 255, .26), transparent 32%),
+    radial-gradient(circle at 82% 18%, rgba(255, 0, 212, .14), transparent 30%),
+    linear-gradient(135deg, #090a10 0%, #13151d 52%, #050507 100%);
 }
 
 /* HERO */
 .news-hero {
+  position: relative;
   min-height: 90vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
   background:
     linear-gradient(
       to bottom,
@@ -24,10 +26,33 @@ body {
   border-bottom-right-radius: 40px;
 }
 
+.news-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 130px;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 5, 7, 0),
+    rgba(5, 5, 7, .78) 58%,
+    #090a10 100%
+  );
+  box-shadow: 0 34px 55px rgba(0, 0, 0, .7);
+}
+
+.news-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
 /* ROWS (Tarjetas) */
 .news-row {
-  background: #000000; /* Fondo de las tarjetas negro */
-  color: white; /* Texto blanco */
+  background: rgba(0, 0, 0, .72);
+  border: 1px solid rgba(255, 255, 255, .08);
+  color: white;
   transition: .25s;
 }
 
