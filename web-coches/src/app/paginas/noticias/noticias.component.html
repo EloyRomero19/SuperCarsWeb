@@ -1,1 +1,152 @@
-<p>noticias works!</p>
+<section class="news-hero d-flex align-items-center text-white">
+  <div class="container pb-5">
+
+    <div class="d-flex gap-2 mb-3 pt-5">
+      <span class="badge rounded-pill text-bg-dark border px-3 py-1 fs-6">
+        Portada
+      </span>
+
+      <span class="badge rounded-pill text-bg-dark border px-3 py-1 fs-6">
+        Enero 2026
+      </span>
+    </div>
+
+    <h1 class="display-5 fw-bold mb-3">
+      Superdeportivos que marcarán tendencia
+      <br>
+      <span class="text-gradient">2026</span>
+    </h1>
+
+    <p class="col-lg-7 mb-4 text-white-50">
+      Híbridos más inteligentes, aerodinámica activa y materiales
+      ultraligeros. Así se está redefiniendo el rendimiento.
+    </p>
+
+    <button
+      class="btn btn-gradient rounded-pill px-4"
+      data-bs-toggle="modal"
+      data-bs-target="#modalNoticia"
+      (click)="abrirModal(noticias[0])"
+    >
+      Leer artículo
+    </button>
+
+  </div>
+</section>
+
+<section class="py-5 text-white">
+  <div class="container">
+
+    <h2 class="fw-bold mb-5 text-center">
+      Últimas noticias
+    </h2>
+
+    <div class="row g-4">
+
+      <div
+        class="col-12"
+        *ngFor="let noticia of noticias"
+      >
+        <article
+          class="news-row rounded-4 d-flex flex-column flex-md-row align-items-center gap-4 p-4"
+        >
+
+          <ng-container *ngIf="noticia.imagen; else videoTemplate">
+            <img
+              [src]="noticia.imagen"
+              class="img-fluid rounded-3 noticia-media"
+              [alt]="noticia.titulo"
+            >
+          </ng-container>
+
+          <ng-template #videoTemplate>
+            <video
+              class="img-fluid rounded-3 noticia-media"
+              autoplay
+              loop
+              playsinline
+              [muted]="true"
+              [defaultMuted]="true"
+            >
+              <source [src]="noticia.video" type="video/mp4">
+            </video>
+          </ng-template>
+
+          <div class="flex-grow-1">
+
+            <span class="badge rounded-pill text-bg-dark border mb-2">
+              {{ noticia.fecha }}
+            </span>
+
+            <h5 class="fw-bold mb-3">
+              {{ noticia.titulo }}
+            </h5>
+
+            <p class="text-white-50 mb-3">
+              {{ noticia.resumen }}
+            </p>
+
+            <div class="text-end">
+              <button
+                class="btn btn-gradient rounded-pill px-4"
+                data-bs-toggle="modal"
+                data-bs-target="#modalNoticia"
+                (click)="abrirModal(noticia)"
+              >
+                Leer más
+              </button>
+            </div>
+
+          </div>
+
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div
+  class="modal fade"
+  id="modalNoticia"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark text-white border-secondary">
+
+      <div class="modal-header border-secondary">
+        <div>
+          <h5 class="modal-title fw-bold">
+            {{ noticiaSeleccionada?.titulo }}
+          </h5>
+
+          <small class="text-white-50">
+            {{ noticiaSeleccionada?.fecha }}
+          </small>
+        </div>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+
+        <img
+          *ngIf="noticiaSeleccionada?.imagen"
+          [src]="noticiaSeleccionada?.imagen"
+          class="img-fluid rounded mb-3"
+        >
+
+        <p>
+          {{ noticiaSeleccionada?.contenido }}
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</div>

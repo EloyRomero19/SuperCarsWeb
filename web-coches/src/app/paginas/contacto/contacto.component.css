@@ -79,7 +79,7 @@ main{
 main{
   position: relative;
   z-index: 2;
-  padding-top: 40px;
+  padding-top: 80px;
 }
 
 main h1{
@@ -90,5 +90,7 @@ main h1{
 main p{
   margin-bottom: 30px;
 }
+
+
 
 
