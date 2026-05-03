@@ -1,19 +1,16 @@
 .footer-dark {
-  background: #0a0a0a;
+  background: #000000e3;
 }
 
-.footer-link {
-  color: #fff;
-  text-decoration: none;
+/* prueba */
+
+footer .btn.rounded-circle {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
-.footer-link:hover {
-  color: #ff00d4;
-}
-
-.social {
-  border: 1px solid #fff;
-  padding: 8px 12px;
-  border-radius: 50%;
-  color: #fff;
-}
+.form-control::placeholder { color: rgba(255,255,255,.6); }
