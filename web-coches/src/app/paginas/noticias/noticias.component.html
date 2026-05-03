@@ -24,9 +24,7 @@
 
     <button
       class="btn btn-gradient rounded-pill px-4"
-      data-bs-toggle="modal"
-      data-bs-target="#modalNoticia"
-      (click)="noticias[0] && abrirModal(noticias[0])"
+      (click)="noticiaPortada && abrirModal(noticiaPortada)"
     >
       Leer artículo
     </button>
@@ -89,8 +87,6 @@
             <div class="text-end">
               <button
                 class="btn btn-gradient rounded-pill px-4"
-                data-bs-toggle="modal"
-                data-bs-target="#modalNoticia"
                 (click)="abrirModal(noticia)"
               >
                 Leer más
@@ -109,8 +105,11 @@
 <!-- MODAL -->
 <div
   class="modal fade"
+  [class.show]="noticiaSeleccionada"
   id="modalNoticia"
   tabindex="-1"
+  [style.display]="noticiaSeleccionada ? 'block' : 'none'"
+  [attr.aria-hidden]="noticiaSeleccionada ? null : 'true'"
 >
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content bg-dark text-white border-secondary">
@@ -129,17 +128,11 @@
         <button
           type="button"
           class="btn-close btn-close-white"
-          data-bs-dismiss="modal"
+          (click)="cerrarModal()"
         ></button>
       </div>
 
       <div class="modal-body">
-
-        <img
-          *ngIf="noticiaSeleccionada?.imagen"
-          [src]="noticiaSeleccionada?.imagen"
-          class="img-fluid rounded mb-3"
-        >
 
         <p>
           {{ noticiaSeleccionada?.contenido }}
@@ -150,3 +143,9 @@
     </div>
   </div>
 </div>
+
+<div
+  *ngIf="noticiaSeleccionada"
+  class="modal-backdrop fade show"
+  (click)="cerrarModal()"
+></div>

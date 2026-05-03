@@ -27,11 +27,13 @@ export class NoticiasComponent implements OnInit, AfterViewInit {
   ) {}
 
   noticiaSeleccionada: Noticia | null = null;
+  noticiaPortada: Noticia | null = null;
   noticias: Noticia[] = [];
 
   ngOnInit(): void {
     this.noticiasService.obtenerNoticias().subscribe({
       next: (data) => {
+        this.noticiaPortada = data.portada;
         this.noticias = data.noticias;
       },
       error: (error) => {
@@ -56,5 +58,9 @@ export class NoticiasComponent implements OnInit, AfterViewInit {
 
   abrirModal(noticia: Noticia) {
     this.noticiaSeleccionada = noticia;
+  }
+
+  cerrarModal() {
+    this.noticiaSeleccionada = null;
   }
 }
