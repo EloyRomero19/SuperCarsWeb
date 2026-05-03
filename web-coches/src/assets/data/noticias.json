@@ -1,4 +1,10 @@
 {
+  "portada": {
+    "fecha": "31 de enero de 2026",
+    "titulo": "Aston Martin prepara un hiperdeportivo híbrido de más de 1.000 CV",
+    "resumen": "La marca británica trabaja en una edición limitada con aerodinámica activa, chasis de carbono y tecnología heredada de la competición.",
+    "contenido": "Aston Martin está preparando un nuevo hiperdeportivo híbrido pensado para unir lujo artesanal y rendimiento extremo. El modelo contaría con un sistema de propulsión de más de 1.000 CV, aerodinámica activa capaz de modificar la carga en curva y una estructura de fibra de carbono diseñada para reducir peso sin perder rigidez. Aunque se produciría en unidades muy limitadas, su objetivo sería demostrar hasta dónde pueden llegar los supercoches de nueva generación cuando combinan electrificación, ligereza y puesta a punto de circuito."
+  },
   "noticias": [
     {
       "fecha": "28 de enero de 2026",
