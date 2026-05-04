@@ -1,6 +1,20 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import {
+  Component,
+  AfterViewInit,
+  Inject,
+  PLATFORM_ID
+} from '@angular/core';
+
+import {
+  CommonModule,
+  isPlatformBrowser
+} from '@angular/common';
+
+import {
+  ReactiveFormsModule,
+  FormBuilder,
+  Validators
+} from '@angular/forms';
 
 @Component({
   selector: 'app-contacto',
@@ -9,13 +23,16 @@ import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.css'
 })
-export class ContactoComponent {
+export class ContactoComponent implements AfterViewInit {
 
   enviado = false;
 
   contactoForm;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
     this.contactoForm = this.fb.group({
       nombre: ['', Validators.required],
       apellidos: ['', Validators.required],
@@ -25,6 +42,24 @@ export class ContactoComponent {
       mensaje: ['', Validators.required],
       consentimiento: [false, Validators.requiredTrue]
     });
+  }
+
+  ngAfterViewInit(): void {
+
+    if (isPlatformBrowser(this.platformId)) {
+
+      const video =
+        document.querySelector('.video-bg video') as HTMLVideoElement;
+
+      if (video) {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.volume = 0;
+
+        video.play().catch(() => {});
+      }
+
+    }
   }
 
   enviarFormulario() {
