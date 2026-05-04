@@ -1,0 +1,20 @@
+[
+  {
+    "titulo": "Ruta nocturna",
+    "categoria": "Experiencia",
+    "imagen": "assets/imagenes/franco-debartolo-Qo0r8_8KnA4-unsplash.jpg",
+    "descripcion": "Una seleccion pensada para sentir la velocidad en escenarios oscuros, con reflejos limpios y una estetica de garaje privado."
+  },
+  {
+    "titulo": "Ingenieria de pista",
+    "categoria": "Performance",
+    "imagen": "assets/imagenes/projectone2.jpeg",
+    "descripcion": "Modelos que trasladan tecnologia de circuito a la carretera, elegidos por aerodinamica, precision y respuesta."
+  },
+  {
+    "titulo": "Iconos con caracter",
+    "categoria": "Coleccion",
+    "imagen": "assets/imagenes/f40.jpg",
+    "descripcion": "Coches que no solo destacan por sus cifras, sino por el deseo, la historia y la presencia que transmiten."
+  }
+]
