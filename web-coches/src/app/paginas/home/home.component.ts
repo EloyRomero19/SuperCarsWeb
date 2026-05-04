@@ -41,14 +41,18 @@ export class HomeComponent implements AfterViewInit {
 
       videos.forEach((video: HTMLVideoElement) => {
         video.muted = true;
+        video.defaultMuted = true;
         video.volume = 0;
-        video.load();
 
-        video.addEventListener(
-          'canplay',
-          () => video.play().catch(() => {}),
-          { once: true }
-        );
+        video.play().catch(() => {});
+
+        setTimeout(() => {
+          video.play().catch(() => {});
+        }, 500);
+
+        setTimeout(() => {
+          video.play().catch(() => {});
+        }, 1500);
       });
 
     }
