@@ -1,97 +1,176 @@
-<section class="about-hero text-white d-flex align-items-center">
-  <div class="container text-center">
+<section class="about-hero text-white">
+  <div class="speed-lines" aria-hidden="true"></div>
 
-    <h1 class="display-4 fw-bold mb-3">
-      Sobre <span class="text-gradient">SuperCars</span>
-    </h1>
+  <div class="container about-hero__content">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <p class="about-kicker mb-3">Club editorial de alto rendimiento</p>
 
-    <p class="lead text-white-50 col-lg-7 mx-auto">
-      Pasión por la velocidad, diseño y tecnología.
-      Creamos experiencias únicas para auténticos amantes del motor.
-    </p>
+        <h1 class="about-title fw-bold mb-4">
+          Donde la velocidad se encuentra con la
+          <span class="text-gradient">exclusividad</span>
+        </h1>
 
+        <p class="about-lead mb-4">
+          En SuperCars seleccionamos modelos, historias y tendencias para
+          quienes entienden que un superdeportivo no es solo una cifra:
+          es diseño, sonido, ingeniería y carácter.
+        </p>
+
+        <div class="hero-actions d-flex flex-wrap gap-3">
+          <a
+            routerLink="/modelos"
+            class="btn btn-gradient px-4 py-3"
+            aria-label="Ir al apartado de modelos de superdeportivos">
+            Explorar modelos
+          </a>
+          <button
+            type="button"
+            class="btn btn-luxury px-4 py-3"
+            (click)="irASeleccion()">
+            Selección Prestige
+          </button>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="hero-showcase">
+          <img
+            src="/assets/imagenes/franco-debartolo-Qo0r8_8KnA4-unsplash.jpg"
+            alt="Porsche deportivo nocturno en exposición"
+          >
+          <div class="showcase-badge">
+            <span>Selección</span>
+            <strong>Prestige Drive</strong>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="py-5 text-white">
+<section class="about-section text-white">
   <div class="container">
-
-    <div class="row g-5 align-items-center">
-
-      <div class="col-lg-6">
-        <img
-          src="/assets/imagenes/senna.jpeg"
-          class="img-fluid rounded-4 shadow-lg"
-          alt="SuperCars"
-        >
+    <div class="stats-strip">
+      <div>
+        <span class="stat-number">+120</span>
+        <span class="stat-label">modelos analizados</span>
       </div>
-
-      <div class="col-lg-6">
-
-        <h2 class="fw-bold mb-4">
-          Nuestra filosofía
-        </h2>
-
-        <p class="text-white-50 fs-5">
-          En SuperCars vivimos la pasión por la automoción de alto rendimiento.
-          Nuestro objetivo es acercar el mundo de los superdeportivos
-          a quienes sienten emoción por la velocidad, la ingeniería
-          y el diseño exclusivo.
-        </p>
-
-        <p class="text-white-50 fs-5">
-          Reunimos noticias, modelos exclusivos, experiencias premium
-          y contenido visual espectacular para crear una web
-          a la altura de las máquinas que representa.
-        </p>
-
+      <div>
+        <span class="stat-number">0-100</span>
+        <span class="stat-label">cultura de prestaciones</span>
       </div>
-
+      <div>
+        <span class="stat-number">Top</span>
+        <span class="stat-label">marcas exclusivas</span>
+      </div>
     </div>
 
+    <div id="seleccion-prestige" class="prestige-selection">
+      <div class="selection-heading">
+        <p class="about-kicker mb-3">Selección Prestige</p>
+        <h2 class="section-title fw-bold mb-0">
+          Una muestra rápida de lo que hace especial a SuperCars.
+        </h2>
+      </div>
+
+      <div class="prestige-lab" *ngIf="seleccionPrestige.length">
+        <div class="lab-visual">
+          <div class="lab-grid" aria-hidden="true"></div>
+          <img
+            [src]="seleccionPrestige[0].imagen"
+            [alt]="seleccionPrestige[0].titulo">
+          <div class="lab-reflection" aria-hidden="true"></div>
+          <div class="lab-marker lab-marker--one" aria-hidden="true"></div>
+          <div class="lab-marker lab-marker--two" aria-hidden="true"></div>
+        </div>
+
+        <div class="lab-content">
+          <article class="lab-main">
+            <span>{{ seleccionPrestige[0].categoria }}</span>
+            <h3>{{ seleccionPrestige[0].titulo }}</h3>
+            <p>{{ seleccionPrestige[0].descripcion }}</p>
+          </article>
+
+          <article
+            class="lab-note"
+            *ngFor="let item of seleccionPrestige.slice(1); let i = index"
+            [class.lab-note--offset]="i === 1">
+            <span>0{{ i + 2 }}</span>
+            <h4>{{ item.titulo }}</h4>
+            <p>{{ item.descripcion }}</p>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-5 align-items-center philosophy-block">
+      <div class="col-lg-5">
+        <p class="about-kicker mb-3">Nuestra filosofía</p>
+        <h2 class="section-title fw-bold mb-4">
+          Miramos cada coche como una obra de precisión.
+        </h2>
+      </div>
+
+      <div class="col-lg-7">
+        <p class="section-copy">
+          SuperCars nace para acercar el universo de los superdeportivos con
+          una mirada cuidada, visual y selectiva. Reunimos noticias, modelos
+          icónicos y experiencias premium para crear una web a la altura de las
+          máquinas que representa.
+        </p>
+        <p class="section-copy mb-0">
+          Nos interesa la velocidad, pero también lo que la hace memorable:
+          aerodinámica, materiales, diseño, sonido y esa sensación de estar
+          ante algo reservado para muy pocos.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="py-5 text-white">
+<section class="about-section about-section--tight text-white">
   <div class="container">
-
-    <h2 class="text-center fw-bold mb-5">
-      ¿Qué nos diferencia?
-    </h2>
+    <div class="section-heading text-center mx-auto mb-5">
+      <p class="about-kicker mb-3">Qué nos diferencia</p>
+      <h2 class="section-title fw-bold">
+        Contenido con pulso de circuito y acabado de atelier.
+      </h2>
+    </div>
 
     <div class="row g-4">
-
       <div class="col-md-4">
-        <div class="card bg-glass h-100 p-4 text-center border-0">
-          <h4 class="fw-bold mb-3">Contenido Premium</h4>
-          <p class="text-white-50 mb-0">
-            Información exclusiva, noticias del sector
-            y modelos icónicos del mundo del motor.
+        <article class="luxury-card h-100">
+          <span class="card-index">01</span>
+          <h3>Curaduría premium</h3>
+          <p>
+            Seleccionamos coches, marcas y noticias con criterio visual,
+            técnico y emocional.
           </p>
-        </div>
+        </article>
       </div>
 
       <div class="col-md-4">
-        <div class="card bg-glass h-100 p-4 text-center border-0">
-          <h4 class="fw-bold mb-3">Diseño Exclusivo</h4>
-          <p class="text-white-50 mb-0">
-            Una experiencia visual elegante, moderna
-            y alineada con el universo premium automovilístico.
+        <article class="luxury-card h-100 luxury-card--featured">
+          <span class="card-index">02</span>
+          <h3>Diseño exclusivo</h3>
+          <p>
+            Una experiencia elegante, oscura y precisa, inspirada en garajes
+            privados y salones de lujo.
           </p>
-        </div>
+        </article>
       </div>
 
       <div class="col-md-4">
-        <div class="card bg-glass h-100 p-4 text-center border-0">
-          <h4 class="fw-bold mb-3">Pasión Real</h4>
-          <p class="text-white-50 mb-0">
-            Hecho por apasionados del motor
-            para apasionados del motor.
+        <article class="luxury-card h-100">
+          <span class="card-index">03</span>
+          <h3>Pasión real</h3>
+          <p>
+            Escribimos para quienes sienten el motor como cultura, no solo
+            como transporte.
           </p>
-        </div>
+        </article>
       </div>
-
     </div>
-
   </div>
 </section>
