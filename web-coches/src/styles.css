@@ -1,32 +1,115 @@
-body {
-  background-color: #111;
-  font-family: 'Poppins', sans-serif;
+body{
+  background-color:#111;
+  font-family:'Poppins',sans-serif;
+  color:white;
 }
 
 /* Gradiente texto */
-.text-gradient {
-  background: linear-gradient(90deg, #ff00cc, #7a2cff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.text-gradient{
+  background:linear-gradient(90deg,#ff00cc,#7a2cff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 /* Botón principal */
-.btn-gradient {
-  background: linear-gradient(90deg, #8a00ff, #ff007f);
-  color: white;
-  border: none;
+.btn-gradient{
+  background:linear-gradient(90deg,#8a00ff,#ff007f);
+  color:white;
+  border:none;
+  transition:.3s ease;
 }
 
-.btn-gradient:hover {
-  opacity: 0.85;
+.btn-gradient:hover{
+  opacity:.85;
+  color:white;
 }
 
-/* Fondo secciones */
-.bg-dark-custom {
-  background-color: #1c1c1c;
+/* botón contacto */
+.btn-contacto{
+  background:linear-gradient(90deg,#7b2cff,#ff008c);
+  color:white;
+  font-weight:700;
+  border:none;
+  padding:4px 14px;
+  border-radius:30px;
+  transition:.3s ease;
 }
 
-/* Cards */
-.bg-card {
-  background-color: #11122b;
+.btn-contacto:hover{
+  transform:scale(1.05);
+  opacity:.9;
+  color:white;
+}
+
+/* outline */
+.btn-outline-gradient{
+  border:1px solid #8f00ff;
+  color:#8f00ff;
+  background:transparent;
+  transition:.3s ease;
+}
+
+.btn-outline-gradient:hover{
+  background:#8f00ff;
+  color:white;
+}
+
+/* navbar */
+.navbar{
+  background:rgba(10,10,20,.45);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.nav-link{
+  color:white;
+  font-weight:500;
+  transition:.3s ease;
+  position:relative;
+}
+
+.nav-link:hover{
+  background:linear-gradient(90deg,#ff00d4,#8a2cff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.nav-link::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:2px;
+  bottom:-4px;
+  left:0;
+  background:linear-gradient(90deg,#ff00d4,#8a2cff);
+  transition:.3s;
+}
+
+.nav-link:hover::after{
+  width:100%;
+}
+
+/* footer */
+.footer-dark{
+  background:#000000e3;
+}
+
+footer .btn.rounded-circle{
+  width:34px;
+  height:34px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+}
+
+/* cards */
+.bg-card,
+.bg-panel,
+.car-card{
+  background:#12132b;
+  color:white;
+  border:none;
+  overflow:hidden;
 }

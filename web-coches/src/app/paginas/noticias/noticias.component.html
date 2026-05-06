@@ -106,9 +106,10 @@
 <div
   class="modal fade"
   [class.show]="noticiaSeleccionada"
+  [class.d-block]="noticiaSeleccionada"
+  [class.d-none]="!noticiaSeleccionada"
   id="modalNoticia"
   tabindex="-1"
-  [style.display]="noticiaSeleccionada ? 'block' : 'none'"
   [attr.aria-hidden]="noticiaSeleccionada ? null : 'true'"
 >
   <div class="modal-dialog modal-dialog-centered modal-lg">
