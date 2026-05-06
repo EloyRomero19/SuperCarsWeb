@@ -74,33 +74,53 @@
         </h2>
       </div>
 
-      <div class="prestige-lab" *ngIf="seleccionPrestige.length">
-        <div class="lab-visual">
-          <div class="lab-grid" aria-hidden="true"></div>
-          <img
-            [src]="seleccionPrestige[0].imagen"
-            [alt]="seleccionPrestige[0].titulo">
-          <div class="lab-reflection" aria-hidden="true"></div>
-          <div class="lab-marker lab-marker--one" aria-hidden="true"></div>
-          <div class="lab-marker lab-marker--two" aria-hidden="true"></div>
+      <div class="row g-4 align-items-center" *ngIf="seleccionPrestige.length">
+
+        <div class="col-lg-7">
+          <div class="prestige-panel h-100">
+            <img
+              [src]="seleccionPrestige[0].imagen"
+              [alt]="seleccionPrestige[0].titulo"
+              class="img-fluid rounded-4 w-100 prestige-img"
+            >
+          </div>
         </div>
 
-        <div class="lab-content">
-          <article class="lab-main">
-            <span>{{ seleccionPrestige[0].categoria }}</span>
-            <h3>{{ seleccionPrestige[0].titulo }}</h3>
-            <p>{{ seleccionPrestige[0].descripcion }}</p>
-          </article>
+        <div class="col-lg-5">
+          <div class="prestige-panel h-100 p-4">
 
-          <article
-            class="lab-note"
-            *ngFor="let item of seleccionPrestige.slice(1); let i = index"
-            [class.lab-note--offset]="i === 1">
-            <span>0{{ i + 2 }}</span>
-            <h4>{{ item.titulo }}</h4>
-            <p>{{ item.descripcion }}</p>
-          </article>
+      <span class="about-kicker d-inline-block mb-3">
+        {{ seleccionPrestige[0].categoria }}
+      </span>
+
+            <h3 class="fw-bold mb-3">
+              {{ seleccionPrestige[0].titulo }}
+            </h3>
+
+            <p class="text-white-50 mb-4">
+              {{ seleccionPrestige[0].descripcion }}
+            </p>
+
+            <div
+              class="prestige-note"
+              *ngFor="let item of seleccionPrestige.slice(1); let i = index"
+            >
+              <small class="fw-bold text-gradient">
+                0{{ i + 2 }}
+              </small>
+
+              <h5 class="fw-bold mt-2">
+                {{ item.titulo }}
+              </h5>
+
+              <p class="text-white-50 mb-0">
+                {{ item.descripcion }}
+              </p>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </div>
 
