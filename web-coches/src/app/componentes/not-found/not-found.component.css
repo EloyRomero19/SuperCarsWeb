@@ -3,17 +3,3 @@
   min-height:100vh;
   background:#000000e3;
 }
-
-.text-gradient{
-  background:linear-gradient(45deg,#ff2bd6,#8f00ff);
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-  color:transparent;
-}
-
-.btn-gradient{
-  background:linear-gradient(45deg,#8f00ff,#ff0077);
-  border:0;
-  color:white;
-}

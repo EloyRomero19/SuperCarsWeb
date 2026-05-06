@@ -1,17 +1,4 @@
-.footer-dark {
-  background: #000000e3;
+.social-btn{
+  width:34px;
+  height:34px;
 }
-
-/* prueba */
-
-footer .btn.rounded-circle {
-  width: 34px;
-  height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-.form-control::placeholder { color: rgba(255,255,255,.6); }
-

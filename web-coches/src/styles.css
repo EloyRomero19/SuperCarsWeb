@@ -90,6 +90,16 @@ body{
   width:100%;
 }
 
+.nav-link.activo{
+  background:linear-gradient(90deg,#ff00d4,#8a2cff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.nav-link.activo::after{
+  width:100%;
+}
+
 /* footer */
 .footer-dark{
   background:#000000e3;

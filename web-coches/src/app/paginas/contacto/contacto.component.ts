@@ -3,8 +3,6 @@ import {
   AfterViewInit,
   Inject,
   PLATFORM_ID,
-  ElementRef,
-  ViewChild
 } from '@angular/core';
 
 import {
@@ -27,9 +25,6 @@ import {
 })
 export class ContactoComponent implements AfterViewInit {
 
-  @ViewChild('bgVideo')
-  videoRef!: ElementRef<HTMLVideoElement>;
-
   enviado = false;
 
   contactoForm;
@@ -50,33 +45,29 @@ export class ContactoComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    if (!isPlatformBrowser(this.platformId)) return;
 
-    const video = this.videoRef.nativeElement;
+    if (isPlatformBrowser(this.platformId)) {
 
-    video.muted = true;
-    video.defaultMuted = true;
-    video.volume = 0;
-    video.autoplay = true;
-    video.loop = true;
-    video.playsInline = true;
+      const video =
+        document.querySelector('.video-bg video') as HTMLVideoElement;
 
-    const playVideo = () => {
+      if (!video) return;
+
+      video.muted = true;
+      video.defaultMuted = true;
+      video.volume = 0;
+
       video.play().catch(() => {});
-    };
 
-    playVideo();
+      setTimeout(() => {
+        video.play().catch(() => {});
+      }, 500);
 
-    requestAnimationFrame(playVideo);
-    setTimeout(playVideo, 250);
-    setTimeout(playVideo, 1000);
-    setTimeout(playVideo, 2000);
+      setTimeout(() => {
+        video.play().catch(() => {});
+      }, 1500);
 
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) {
-        playVideo();
-      }
-    });
+    }
   }
 
   enviarFormulario() {

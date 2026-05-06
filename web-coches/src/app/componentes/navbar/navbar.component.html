@@ -17,19 +17,39 @@
       <ul class="navbar-nav align-items-center gap-3">
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="activo">Inicio</a>
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="activo"
+            [routerLinkActiveOptions]="{ exact:true }">
+            Inicio
+          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/modelos" routerLinkActive="activo">Modelos</a>
+          <a
+            class="nav-link"
+            routerLink="/modelos"
+            routerLinkActive="activo">
+            Modelos
+          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/noticias" routerLinkActive="activo">Noticias</a>
+          <a
+            class="nav-link"
+            href="/noticias">
+            Noticias
+          </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/about">Sobre nosotros</a>
+          <a
+            class="nav-link"
+            routerLink="/about"
+            routerLinkActive="activo">
+            Sobre nosotros
+          </a>
         </li>
 
         <li class="nav-item">

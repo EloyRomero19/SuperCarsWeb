@@ -15,9 +15,15 @@
   background:#050507;
 }
 
-.modelos-hero::before{
+.modelos-hero::before,
+.modelos-hero::after{
   content:"";
   position:absolute;
+  left:0;
+  right:0;
+}
+
+.modelos-hero::before{
   inset:0;
   background:linear-gradient(
     90deg,
@@ -28,10 +34,6 @@
 }
 
 .modelos-hero::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
   bottom:-1px;
   height:130px;
   background:linear-gradient(
@@ -48,15 +50,19 @@
   width:100%;
   height:100%;
   object-fit:cover;
-  z-index:0;
+}
+
+.hero-kicker,
+.tag,
+.back-top span{
+  color:#ff00d4;
+  font-weight:800;
+  text-transform:uppercase;
 }
 
 .hero-kicker,
 .tag{
-  color:#ff00d4;
-  font-weight:800;
   letter-spacing:.12em;
-  text-transform:uppercase;
 }
 
 .modelos-hero h1{
@@ -92,7 +98,7 @@ section h2{
 
 .card-inner{
   position:relative;
-  min-height:520px;
+  min-height:inherit;
   transform-style:preserve-3d;
   transition:transform .8s cubic-bezier(.2,.75,.2,1);
 }
@@ -108,20 +114,19 @@ section h2{
   flex-direction:column;
   overflow:hidden;
   backface-visibility:hidden;
-  border:1px solid rgba(255,255,255,.12);
   border-radius:12px;
-  background:#11131b;
+  border:1px solid rgba(255,255,255,.12);
   box-shadow:0 24px 58px rgba(0,0,0,.46);
 }
 
 .card-front{
-  transform:rotateY(0);
+  background:#11131b;
 }
 
 .card-back{
-  transform:rotateY(180deg);
   padding:24px;
   overflow-y:auto;
+  transform:rotateY(180deg);
   background:
     linear-gradient(
       145deg,
@@ -132,7 +137,6 @@ section h2{
     #101219;
 }
 
-/* línea */
 .speed-line{
   position:absolute;
   top:18px;
@@ -143,7 +147,6 @@ section h2{
   transform:skewX(-28deg);
 }
 
-/* imagen */
 .card-image-wrap{
   height:360px;
   overflow:hidden;
@@ -156,19 +159,23 @@ section h2{
   transition:.45s;
 }
 
-.speed-card:hover .card-image-wrap img{
+.speed-card:hover img{
   transform:scale(1.08) translateX(8px);
   filter:brightness(.88);
 }
 
-/* copy */
-.card-copy{
+.card-copy,
+.back-top{
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  gap:18px;
+  gap:14px;
+}
+
+.card-copy{
+  justify-content:space-between;
   padding:22px;
   flex:1;
+  gap:18px;
 }
 
 .card-copy h3,
@@ -189,26 +196,13 @@ section h2{
   font-size:.72rem;
 }
 
-/* back */
-.back-top{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
 .back-top img{
   width:54px;
   height:54px;
-  object-fit:contain;
   padding:8px;
   border-radius:8px;
+  object-fit:contain;
   background:white;
-}
-
-.back-top span{
-  color:#ff00d4;
-  font-weight:800;
-  text-transform:uppercase;
 }
 
 .descripcion{
@@ -216,7 +210,6 @@ section h2{
   color:#cfd3df;
 }
 
-/* specs */
 .spec-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -245,19 +238,16 @@ section h2{
 }
 
 @media (max-width:767px){
-
   .modelos-hero{
     min-height:58vh;
     border-radius:0 0 22px 22px;
   }
 
-  .speed-card,
-  .card-inner{
+  .speed-card{
     min-height:560px;
   }
 
   .card-image-wrap{
     height:340px;
   }
-
 }
