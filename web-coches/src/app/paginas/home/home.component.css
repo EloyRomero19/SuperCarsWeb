@@ -1,121 +1,86 @@
-:host {
-  display: block;
-  min-height: 100vh;
-  color: white;
+:host{
+  display:block;
+  min-height:100vh;
+  color:white;
   background:
-    radial-gradient(circle at 20% 12%, rgba(123, 44, 255, .26), transparent 32%),
-    radial-gradient(circle at 82% 18%, rgba(255, 0, 212, .14), transparent 30%),
-    linear-gradient(135deg, #090a10 0%, #13151d 52%, #050507 100%);
+    radial-gradient(circle at 20% 12%, rgba(123,44,255,.26), transparent 32%),
+    radial-gradient(circle at 82% 18%, rgba(255,0,212,.14), transparent 30%),
+    linear-gradient(135deg,#090a10 0%, #13151d 52%, #050507 100%);
 }
 
+/* HERO */
 .hero-image{
-  background: url("../../../assets/imagenes/nika-qufarashvili-lSTN0nYAUKA-unsplash.jpg")
-  center/cover no-repeat;
-  border-radius: 0 0 40px 40px;
-  box-shadow: 0 30px 60px rgba(0,0,0,.6);
+  background:
+    url("/assets/imagenes/nika-qufarashvili-lSTN0nYAUKA-unsplash.jpg")
+    center/cover no-repeat;
+  border-radius:0 0 40px 40px;
+  box-shadow:0 30px 60px rgba(0,0,0,.6);
 }
 
 .hero-overlay{
   inset:0;
-  background: linear-gradient(
+  background:linear-gradient(
     180deg,
     rgba(0,0,0,.15),
     rgba(0,0,0,.55)
   );
 }
 
-.text-gradient{
-  background: linear-gradient(45deg,#ff2bd6,#8f00ff);
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-  color:transparent;
-}
-
-.btn-gradient{
-  background: linear-gradient(45deg,#8f00ff,#ff0077);
-  color:#fff;
-  border:0;
-  transition: transform .25s, box-shadow .25s;
-}
-
-.btn-gradient:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(255,0,200,.4);
-  color:white;
-}
-
-.btn-outline-gradient{
-  border:1px solid #8f00ff;
-  color:#8f00ff;
-}
-
-.btn-outline-gradient:hover{
-  background:#8f00ff;
-  color:white;
-}
-
-.bg-panel,
-.car-card{
-  background: #12132b;
-  color: white;
-  border: none;
-  overflow: hidden;
-}
-
+/* VIDEOS */
 .car-card video{
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  display: block;
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
 }
+
+/* CAROUSEL */
 .carousel-3d{
-  position: relative;
-  height: 450px;
-  perspective: 1400px;
-  overflow: hidden;
-  cursor: grab;
-  user-select: none;
+  position:relative;
+  height:450px;
+  perspective:1400px;
+  overflow:hidden;
+  user-select:none;
 }
 
 .carousel-track{
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-  transition: transform .8s cubic-bezier(.77,0,.175,1);
+  position:absolute;
+  inset:0;
+  transform-style:preserve-3d;
+  transition:transform .8s cubic-bezier(.77,0,.175,1);
 }
 
 .carousel-card{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 280px;
-  height: 380px;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #000;
-  transition: transform 1s, opacity 1s;
-  box-shadow: 0 20px 45px rgba(0,0,0,.5);
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:280px;
+  height:380px;
+  border-radius:16px;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 20px 45px rgba(0,0,0,.5);
 }
 
 .carousel-card img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(.75);
-  transition: filter .6s;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.75);
+  transition:.6s;
 }
 
 .carousel-card.active{
-  z-index: 20;
+  z-index:20;
 }
 
 .carousel-card.active img{
-  filter: brightness(1);
-  transform: scale(1.08);
+  filter:brightness(1);
+  transform:scale(1.08);
 }
 
-@media(max-width:768px){
+/* MOBILE */
+@media (max-width:768px){
 
   .hero-image{
     border-radius:0 0 20px 20px;
@@ -129,4 +94,5 @@
     width:180px;
     height:240px;
   }
+
 }

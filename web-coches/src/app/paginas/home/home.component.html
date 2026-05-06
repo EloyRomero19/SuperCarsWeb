@@ -1,93 +1,97 @@
 <!-- HERO -->
-<section
-  class="hero-image vh-100 position-relative overflow-hidden d-flex align-items-center"
->
-  <div class="hero-overlay position-absolute w-100 h-100"></div>
+<section class="hero-image vh-100 position-relative overflow-hidden d-flex align-items-center">
+  <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
 
-  <div class="container position-relative">
+  <div class="container position-relative z-1">
     <div class="row">
       <div class="col-lg-6 text-white">
-        <h1 class="display-4 fw-bold text-uppercase">
-          Descubre los mejores<br />
+
+        <h1 class="display-4 fw-bold text-uppercase mb-3">
+          Descubre los mejores
+          <br>
           <span class="text-gradient">Superdeportivos</span>
         </h1>
 
-        <p class="lead">
+        <p class="lead mb-4">
           Los autos más exclusivos y veloces del planeta te esperan
         </p>
 
-        <a routerLink="/modelos" class="btn btn-gradient btn-lg px-4">
+        <a routerLink="/modelos" class="btn btn-gradient btn-lg px-4 rounded-pill">
           Ver modelos
         </a>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- MODELOS DESTACADOS -->
-<section class="py-5 text-white" id="modelos">
+<!-- MODELOS -->
+<section class="py-5 text-white">
   <div class="container">
-    <h2 class="text-center fw-bold">MODELOS DESTACADOS</h2>
 
-    <div class="row g-4 mt-4">
+    <h2 class="text-center fw-bold mb-5">
+      MODELOS DESTACADOS
+    </h2>
 
-      <!-- CARD 1 -->
+    <div class="row g-4">
+
       <div class="col-md-4">
-        <div class="card car-card">
-          <video class="card-img-top" autoplay muted loop playsinline preload="auto">
+        <div class="card car-card h-100 rounded-4 overflow-hidden">
+
+          <video class="w-100" autoplay muted loop playsinline preload="auto">
             <source
               src="https://res.cloudinary.com/doiaqcxy9/video/upload/q_auto:good,f_mp4/lambo_a9ven2.mp4"
               type="video/mp4"
             />
           </video>
 
-          <div class="card-body text-center">
-            <h5>Lamborghini Aventador SVJ</h5>
-
-            <button class="btn btn-outline-gradient btn-sm">
+          <div class="card-body text-center py-4">
+            <h5 class="mb-3">Lamborghini Aventador SVJ</h5>
+            <a routerLink="/modelos" class="btn btn-outline-gradient btn-sm rounded-pill px-4">
               Ver más
-            </button>
+            </a>
           </div>
+
         </div>
       </div>
 
-      <!-- CARD 2 -->
       <div class="col-md-4">
-        <div class="card car-card">
-          <video class="card-img-top" autoplay muted loop playsinline preload="auto">
+        <div class="card car-card h-100 rounded-4 overflow-hidden">
+
+          <video class="w-100" autoplay muted loop playsinline preload="auto">
             <source
               src="https://res.cloudinary.com/doiaqcxy9/video/upload/q_auto:good,f_mp4/ferrari_rsmypt.mp4"
               type="video/mp4"
             />
           </video>
 
-          <div class="card-body text-center">
-            <h5>Ferrari F8 Tributo</h5>
-
-            <button class="btn btn-outline-gradient btn-sm">
+          <div class="card-body text-center py-4">
+            <h5 class="mb-3">Ferrari F8 Tributo</h5>
+            <a routerLink="/modelos" class="btn btn-outline-gradient btn-sm rounded-pill px-4">
               Ver más
-            </button>
+            </a>
           </div>
+
         </div>
       </div>
 
-      <!-- CARD 3 -->
       <div class="col-md-4">
-        <div class="card car-card">
-          <video class="card-img-top" autoplay muted loop playsinline preload="auto">
+        <div class="card car-card h-100 rounded-4 overflow-hidden">
+
+          <video class="w-100" autoplay muted loop playsinline preload="auto">
             <source
               src="https://res.cloudinary.com/doiaqcxy9/video/upload/q_auto,f_auto,w_960/mcLaren_e2hqgo.mp4"
               type="video/mp4"
             />
           </video>
 
-          <div class="card-body text-center">
-            <h5>McLaren 720S</h5>
-
-            <button class="btn btn-outline-gradient btn-sm">
+          <div class="card-body text-center py-4">
+            <h5 class="mb-3">McLaren 720S</h5>
+            <a routerLink="/modelos" class="btn btn-outline-gradient btn-sm rounded-pill px-4">
               Ver más
-            </button>
+            </a>
           </div>
+
         </div>
       </div>
 
@@ -95,33 +99,33 @@
   </div>
 </section>
 
-<!-- GALERÍA 3D -->
+<!-- GALERÍA -->
 <section class="py-5 text-white">
   <div class="container text-center">
 
-    <h2 class="section-title mb-5">GALERÍA EXCLUSIVA</h2>
+    <h2 class="fw-bold mb-5">
+      GALERÍA EXCLUSIVA
+    </h2>
 
     <div class="carousel-3d">
       <div
         class="carousel-track"
         [style.transform]="'rotateY(' + rotation + 'deg)'"
       >
-
         <div
           class="carousel-card"
           *ngFor="let img of galeria; let i = index"
           [class.active]="getActive(i)"
           [style.transform]="getTransform(i)"
         >
-          <img [src]="img" alt="Supercar" />
+          <img [src]="img" alt="Supercar">
         </div>
-
       </div>
     </div>
 
     <div class="d-flex justify-content-center gap-3 mt-4">
-      <button class="btn btn-gradient btn-sm" (click)="prevSlide()">‹</button>
-      <button class="btn btn-gradient btn-sm" (click)="nextSlide()">›</button>
+      <button class="btn btn-gradient btn-sm rounded-circle px-3" (click)="prevSlide()">‹</button>
+      <button class="btn btn-gradient btn-sm rounded-circle px-3" (click)="nextSlide()">›</button>
     </div>
 
   </div>
@@ -130,40 +134,44 @@
 <!-- NOTICIAS -->
 <section class="py-5 text-white">
   <div class="container">
-    <h2 class="text-center fw-bold">ÚLTIMAS NOTICIAS</h2>
 
-    <div class="row mt-4 g-4">
+    <h2 class="text-center fw-bold mb-5">
+      ÚLTIMAS NOTICIAS
+    </h2>
+
+    <div class="row g-4">
 
       <div class="col-md-6">
-        <div class="card bg-panel text-white p-4 rounded-3 h-100">
-          <h5>Nuevos Lanzamientos 2026</h5>
+        <div class="card bg-panel rounded-4 p-4 h-100">
+          <h5 class="mb-3">Nuevos Lanzamientos 2026</h5>
 
-          <p>
+          <p class="mb-3">
             Descubre los últimos superdeportivos que llegan este año con
             tecnología híbrida y diseños extremos.
           </p>
 
-          <a routerLink="/noticias" class="text-gradient fw-semibold">
+          <a routerLink="/noticias" class="text-gradient fw-semibold text-decoration-none">
             Leer más →
           </a>
         </div>
       </div>
 
       <div class="col-md-6">
-        <div class="card bg-panel text-white p-4 rounded-3 h-100">
-          <h5>Eventos de Velocidad</h5>
+        <div class="card bg-panel rounded-4 p-4 h-100">
+          <h5 class="mb-3">Eventos de Velocidad</h5>
 
-          <p>
+          <p class="mb-3">
             Conoce los eventos más exclusivos del mundo del motor,
             circuitos y presentaciones privadas.
           </p>
 
-          <a routerLink="/noticias" class="text-gradient fw-semibold">
+          <a routerLink="/noticias" class="text-gradient fw-semibold text-decoration-none">
             Leer más →
           </a>
         </div>
       </div>
 
     </div>
+
   </div>
 </section>

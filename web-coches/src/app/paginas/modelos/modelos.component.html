@@ -1,103 +1,169 @@
 <section class="modelos-page text-white">
-  <section class="modelos-hero">
+
+  <!-- HERO -->
+  <section class="modelos-hero position-relative overflow-hidden">
     <img
-      class="hero-bg"
       src="assets/imagenes/rear-light-hero-hq.png?v=5"
+      class="hero-bg"
       alt=""
     >
 
-    <div class="container hero-content">
-      <p class="hero-kicker">Línea exclusiva</p>
-      <h1>El arte de la perfección</h1>
-      <p>
-        Una selección de supercoches extremos con diseño, potencia y cifras
-        pensadas para acelerar el pulso.
-      </p>
+    <div class="container position-relative z-1 py-5">
+      <div class="col-lg-7 pt-5 mt-5">
+
+        <p class="hero-kicker mb-2">
+          Línea exclusiva
+        </p>
+
+        <h1 class="fw-bold text-uppercase mb-3">
+          El arte de la perfección
+        </h1>
+
+        <p class="lead text-light mb-0">
+          Una selección de supercoches extremos con diseño,
+          potencia y cifras pensadas para acelerar el pulso.
+        </p>
+
+      </div>
     </div>
   </section>
 
-  <section class="container modelos-grid-section">
-    <div class="section-heading">
-      <p>Top supercoches</p>
-      <h2>Arte y potencia</h2>
+  <!-- GRID -->
+  <section class="container py-5">
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
+      <div>
+        <p class="hero-kicker mb-2">
+          Top supercoches
+        </p>
+
+        <h2 class="fw-bold text-uppercase mb-0">
+          Arte y potencia
+        </h2>
+      </div>
     </div>
 
-    <div class="modelos-grid">
-      <article
-        class="speed-card"
+    <div class="row g-4">
+
+      <div
+        class="col-lg-4 col-md-6"
         *ngFor="let coche of coches; trackBy: trackById"
-        [class.is-flipped]="cardActiva === coche.id"
       >
-        <div class="card-orbit"></div>
+        <article
+          class="speed-card"
+          [class.is-flipped]="cardActiva === coche.id"
+        >
 
-        <div class="card-inner">
-          <div class="card-face card-front">
-            <div class="speed-line"></div>
+          <div class="card-orbit"></div>
 
-            <div class="card-image-wrap">
-              <img [src]="coche.imagen" [alt]="coche.marca + ' ' + coche.modelo">
-            </div>
+          <div class="card-inner">
 
-            <div class="card-copy">
-              <div>
-                <span class="tag">{{ coche.etiqueta }}</span>
-                <h3>{{ coche.marca }} <strong>{{ coche.modelo }}</strong></h3>
+            <!-- FRONT -->
+            <div class="card-face card-front">
+
+              <div class="speed-line"></div>
+
+              <div class="card-image-wrap">
+                <img
+                  [src]="coche.imagen"
+                  [alt]="coche.marca + ' ' + coche.modelo"
+                >
               </div>
 
-              <button type="button" (click)="alternarCard(coche.id)">
-                Ver más
-              </button>
-            </div>
-          </div>
+              <div class="card-copy">
+                <div>
+                  <span class="tag">
+                    {{ coche.etiqueta }}
+                  </span>
 
-          <div class="card-face card-back">
-            <div class="back-top">
-              <img
-                *ngIf="coche.logo"
-                [src]="coche.logo"
-                [alt]="'Logo ' + coche.marca"
+                  <h3>
+                    {{ coche.marca }}
+                    <strong>{{ coche.modelo }}</strong>
+                  </h3>
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-gradient rounded-pill px-4"
+                  (click)="alternarCard(coche.id)"
+                >
+                  Ver más
+                </button>
+              </div>
+
+            </div>
+
+            <!-- BACK -->
+            <div class="card-face card-back">
+
+              <div class="back-top">
+                <img
+                  *ngIf="coche.logo"
+                  [src]="coche.logo"
+                  [alt]="'Logo ' + coche.marca"
+                >
+
+                <div>
+                  <span>{{ coche.marca }}</span>
+                  <h3>{{ coche.modelo }}</h3>
+                </div>
+              </div>
+
+              <p class="descripcion">
+                {{ coche.descripcion }}
+              </p>
+
+              <div class="spec-grid">
+
+                <div>
+                  <span>Potencia</span>
+                  <strong>{{ coche.potencia }}</strong>
+                </div>
+
+                <div>
+                  <span>Vel. máxima</span>
+                  <strong>{{ coche.velocidadMaxima }}</strong>
+                </div>
+
+                <div>
+                  <span>0-100</span>
+                  <strong>{{ coche.aceleracion }}</strong>
+                </div>
+
+                <div>
+                  <span>Motor</span>
+                  <strong>{{ coche.motor }}</strong>
+                </div>
+
+                <div>
+                  <span>Par</span>
+                  <strong>{{ coche.par }}</strong>
+                </div>
+
+                <div>
+                  <span>Tracción</span>
+                  <strong>{{ coche.traccion }}</strong>
+                </div>
+
+              </div>
+
+              <button
+                type="button"
+                class="btn btn-outline-light rounded-pill px-4 mt-auto"
+                (click)="alternarCard(coche.id)"
               >
-              <div>
-                <span>{{ coche.marca }}</span>
-                <h3>{{ coche.modelo }}</h3>
-              </div>
+                Volver
+              </button>
+
             </div>
 
-            <p class="descripcion">{{ coche.descripcion }}</p>
-
-            <div class="spec-grid">
-              <div>
-                <span>Potencia</span>
-                <strong>{{ coche.potencia }}</strong>
-              </div>
-              <div>
-                <span>Vel. máxima</span>
-                <strong>{{ coche.velocidadMaxima }}</strong>
-              </div>
-              <div>
-                <span>0-100</span>
-                <strong>{{ coche.aceleracion }}</strong>
-              </div>
-              <div>
-                <span>Motor</span>
-                <strong>{{ coche.motor }}</strong>
-              </div>
-              <div>
-                <span>Par</span>
-                <strong>{{ coche.par }}</strong>
-              </div>
-              <div>
-                <span>Tracción</span>
-                <strong>{{ coche.traccion }}</strong>
-              </div>
-            </div>
-
-            <button type="button" class="back-button" (click)="alternarCard(coche.id)">
-              Volver
-            </button>
           </div>
-        </div>
-      </article>
+
+        </article>
+      </div>
+
     </div>
+
   </section>
+
 </section>
