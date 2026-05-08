@@ -1,13 +1,52 @@
-<section class="vh-100 d-flex align-items-center justify-content-center text-white text-center">
-  <div>
-    <h1 class="display-1 fw-bold text-gradient">404</h1>
-    <h2 class="fw-bold mb-3">Página no encontrada</h2>
-    <p class="text-white-50 mb-4">
-      La ruta que has escrito no existe.
-    </p>
+<section class="not-found-page text-white overflow-hidden">
+  <div class="container position-relative py-5">
+    <div class="row min-vh-100 align-items-center g-5">
 
-    <a routerLink="/" class="btn btn-gradient px-4 rounded-pill">
-      Volver al inicio
-    </a>
+      <div class="col-lg-5 text-center text-lg-start">
+        <h1 class="display-1 fw-bold text-gradient mb-2">
+          404
+        </h1>
+
+        <h2 class="fw-bold text-uppercase mb-3">
+          Página no encontrada
+        </h2>
+
+        <p class="lead text-white-50 mb-4">
+          Parece que este enlace perdió el control y terminó fuera de la carretera.
+        </p>
+
+        <a routerLink="/" class="btn btn-gradient px-4 rounded-pill">
+          Volver al inicio
+        </a>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="crash-scene mx-auto">
+          <div class="road-sign">
+            <span>404</span>
+          </div>
+
+          <div class="impact-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="car-shell">
+            <div class="car-window"></div>
+            <div class="car-light"></div>
+            <div class="car-bumper"></div>
+            <div class="wheel wheel-left"></div>
+            <div class="wheel wheel-right"></div>
+          </div>
+
+          <div class="road">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
