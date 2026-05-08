@@ -23,14 +23,69 @@
     </p>
 
     <button
+      *ngIf="noticiaPortada"
+      type="button"
       class="btn btn-gradient rounded-pill px-4"
-      (click)="noticiaPortada && abrirModal(noticiaPortada)"
+      (click)="abrirPortada()"
     >
       Leer artículo
     </button>
 
   </div>
 </section>
+
+<div
+  class="modal fade"
+  [class.show]="portadaAbierta"
+  [class.d-block]="portadaAbierta"
+  [class.d-none]="!portadaAbierta"
+  tabindex="-1"
+  [attr.aria-hidden]="portadaAbierta ? null : 'true'"
+>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-dark text-white border-secondary">
+
+      <div class="modal-header border-secondary">
+        <div>
+          <span class="badge rounded-pill text-bg-dark border mb-2">
+            Portada
+          </span>
+
+          <h5 class="modal-title fw-bold">
+            {{ noticiaPortada?.titulo }}
+          </h5>
+
+          <small class="text-white-50">
+            {{ noticiaPortada?.fecha }}
+          </small>
+        </div>
+
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          (click)="cerrarPortada()"
+        ></button>
+      </div>
+
+      <div class="modal-body">
+        <p class="lead text-white-50">
+          {{ noticiaPortada?.resumen }}
+        </p>
+
+        <p>
+          {{ noticiaPortada?.contenido }}
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div
+  *ngIf="portadaAbierta"
+  class="modal-backdrop fade show"
+  (click)="cerrarPortada()"
+></div>
 
 <section class="py-5 text-white">
   <div class="container">
@@ -43,7 +98,7 @@
 
       <div
         class="col-12"
-        *ngFor="let noticia of noticias"
+        *ngFor="let noticia of noticias; trackBy: trackById"
       >
         <article
           class="news-row rounded-4 d-flex flex-column flex-md-row align-items-center gap-4 p-4"
@@ -85,12 +140,12 @@
             </p>
 
             <div class="text-end">
-              <button
+              <a
+                [routerLink]="['/noticias', noticia.id]"
                 class="btn btn-gradient rounded-pill px-4"
-                (click)="abrirModal(noticia)"
               >
                 Leer más
-              </button>
+              </a>
             </div>
 
           </div>
@@ -101,52 +156,3 @@
     </div>
   </div>
 </section>
-
-<!-- MODAL -->
-<div
-  class="modal fade"
-  [class.show]="noticiaSeleccionada"
-  [class.d-block]="noticiaSeleccionada"
-  [class.d-none]="!noticiaSeleccionada"
-  id="modalNoticia"
-  tabindex="-1"
-  [attr.aria-hidden]="noticiaSeleccionada ? null : 'true'"
->
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-dark text-white border-secondary">
-
-      <div class="modal-header border-secondary">
-        <div>
-          <h5 class="modal-title fw-bold">
-            {{ noticiaSeleccionada?.titulo }}
-          </h5>
-
-          <small class="text-white-50">
-            {{ noticiaSeleccionada?.fecha }}
-          </small>
-        </div>
-
-        <button
-          type="button"
-          class="btn-close btn-close-white"
-          (click)="cerrarModal()"
-        ></button>
-      </div>
-
-      <div class="modal-body">
-
-        <p>
-          {{ noticiaSeleccionada?.contenido }}
-        </p>
-
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div
-  *ngIf="noticiaSeleccionada"
-  class="modal-backdrop fade show"
-  (click)="cerrarModal()"
-></div>

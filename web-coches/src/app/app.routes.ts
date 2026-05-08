@@ -4,6 +4,7 @@ import { HomeComponent } from './paginas/home/home.component';
 import { ContactoComponent } from './paginas/contacto/contacto.component';
 import { NoticiasComponent } from './paginas/noticias/noticias.component';
 import { ModelosComponent } from './paginas/modelos/modelos.component';
+import { NoticiaDetalleComponent } from './paginas/noticia-detalle/noticia-detalle.component';
 
 import { NotFoundComponent } from './componentes/not-found/not-found.component';
 import { SobreNosotrosComponent } from './componentes/sobre-nosotros/sobre-nosotros.component';
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'modelos', component: ModelosComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'noticias', component: NoticiasComponent },
+  { path: 'noticias/:id', component: NoticiaDetalleComponent },
   { path: 'about', component: SobreNosotrosComponent },
 
   { path: '**', component: NotFoundComponent }

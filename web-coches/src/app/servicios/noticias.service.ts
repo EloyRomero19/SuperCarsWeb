@@ -1,20 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-export interface Noticia {
-  fecha: string;
-  titulo: string;
-  imagen?: string;
-  video?: string;
-  resumen: string;
-  contenido: string;
-}
-
-interface NoticiasResponse {
-  portada: Noticia;
-  noticias: Noticia[];
-}
+import { map } from 'rxjs/operators';
+import { Noticia, NoticiasResponse } from '../interfaces/noticia';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +15,11 @@ export class NoticiasService {
 
   obtenerNoticias(): Observable<NoticiasResponse> {
     return this.http.get<NoticiasResponse>(this.noticiasUrl);
+  }
+
+  obtenerNoticiaPorId(id: string): Observable<Noticia | undefined> {
+    return this.obtenerNoticias().pipe(
+      map(data => [data.portada, ...data.noticias].find(noticia => noticia.id === id))
+    );
   }
 }

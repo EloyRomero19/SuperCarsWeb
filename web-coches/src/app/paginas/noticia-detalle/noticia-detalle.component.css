@@ -1,0 +1,135 @@
+:host{
+  display:block;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 14% 8%, rgba(255,0,212,.18), transparent 28%),
+    radial-gradient(circle at 88% 14%, rgba(30,214,198,.13), transparent 28%),
+    linear-gradient(135deg,#07080d 0%,#151722 54%,#050507 100%);
+}
+
+.noticia-detalle{
+  min-height:100vh;
+}
+
+.article-hero{
+  padding:30px 0 18px;
+}
+
+.article-title{
+  max-width:980px;
+  font-size:clamp(1.9rem,5vw,4.6rem);
+  line-height:1;
+  text-transform:uppercase;
+  overflow-wrap:break-word;
+}
+
+.article-lead{
+  max-width:720px;
+  color:#c4c8d4;
+  font-size:clamp(1rem,1.6vw,1.16rem);
+  line-height:1.65;
+  display:-webkit-box;
+  overflow:hidden;
+  -webkit-line-clamp:4;
+  -webkit-box-orient:vertical;
+}
+
+.article-meta,
+.article-body{
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.065);
+  backdrop-filter:blur(10px);
+}
+
+.article-meta span{
+  display:block;
+  color:#ff33d7;
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.media-stage{
+  position:relative;
+  overflow:hidden;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  box-shadow:0 26px 58px rgba(0,0,0,.42);
+}
+
+.detalle-media{
+  width:100%;
+  height:clamp(260px,34vw,430px);
+  object-fit:cover;
+  display:block;
+}
+
+.article-body{
+  border-radius:12px;
+  box-shadow:0 22px 52px rgba(0,0,0,.25);
+}
+
+.article-body p{
+  margin:0;
+  color:#e3e5ed;
+  font-size:1.05rem;
+  line-height:1.9;
+  white-space:pre-line;
+}
+
+.article-meta{
+  position:sticky;
+  top:92px;
+  border-radius:10px;
+}
+
+.article-meta strong{
+  display:block;
+  margin-top:6px;
+  color:#f3f4f8;
+}
+
+.article-meta hr{
+  margin:18px 0;
+  border-color:rgba(255,255,255,.18);
+  opacity:1;
+}
+
+.article-actions{
+  padding-bottom:42px;
+}
+
+@media (max-width:991px){
+  .article-hero{
+    padding-top:18px;
+  }
+
+  .article-meta{
+    position:static;
+  }
+}
+
+@media (max-width:575px){
+  .article-title{
+    font-size:1.62rem;
+    line-height:1.08;
+    overflow-wrap:normal;
+  }
+
+  .article-lead{
+    -webkit-line-clamp:3;
+  }
+
+  .detalle-media{
+    height:230px;
+  }
+
+  .media-stage{
+    border-radius:10px;
+  }
+
+  .article-body p{
+    font-size:1rem;
+  }
+}

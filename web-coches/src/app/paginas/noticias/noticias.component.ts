@@ -10,12 +10,14 @@ import {
   CommonModule,
   isPlatformBrowser
 } from '@angular/common';
-import { Noticia, NoticiasService } from '../../servicios/noticias.service';
+import { RouterLink } from '@angular/router';
+import { Noticia } from '../../interfaces/noticia';
+import { NoticiasService } from '../../servicios/noticias.service';
 
 @Component({
   selector: 'app-noticias',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './noticias.component.html',
   styleUrl: './noticias.component.css'
 })
@@ -26,8 +28,8 @@ export class NoticiasComponent implements OnInit, AfterViewInit {
     private noticiasService: NoticiasService
   ) {}
 
-  noticiaSeleccionada: Noticia | null = null;
   noticiaPortada: Noticia | null = null;
+  portadaAbierta = false;
   noticias: Noticia[] = [];
 
   ngOnInit(): void {
@@ -60,11 +62,15 @@ export class NoticiasComponent implements OnInit, AfterViewInit {
     }
   }
 
-  abrirModal(noticia: Noticia) {
-    this.noticiaSeleccionada = noticia;
+  trackById(_: number, noticia: Noticia): string {
+    return noticia.id;
   }
 
-  cerrarModal() {
-    this.noticiaSeleccionada = null;
+  abrirPortada(): void {
+    this.portadaAbierta = true;
+  }
+
+  cerrarPortada(): void {
+    this.portadaAbierta = false;
   }
 }

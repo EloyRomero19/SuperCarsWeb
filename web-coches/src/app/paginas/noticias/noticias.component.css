@@ -23,6 +23,11 @@
     url("/assets/imagenes/senna.jpeg") center/cover no-repeat;
 }
 
+.news-hero .container{
+  position:relative;
+  z-index:1;
+}
+
 .news-hero::after{
   content:"";
   position:absolute;
@@ -36,6 +41,7 @@
     rgba(5,5,7,.78) 58%,
     #090a10 100%
   );
+  pointer-events:none;
 }
 
 /* CARDS */
