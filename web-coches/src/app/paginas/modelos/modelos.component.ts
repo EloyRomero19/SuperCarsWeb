@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { isPlatformBrowser } from '@angular/common';
-import { PLATFORM_ID, inject } from '@angular/core';
+import { CochesService } from '../../servicios/coches.service';
 
 interface Supercoche {
   id: string;
@@ -31,19 +30,18 @@ export class ModelosComponent implements OnInit {
 
   coches: Supercoche[] = [];
   cardActiva: string | null = null;
-  private readonly platformId = inject(PLATFORM_ID);
 
-  async ngOnInit(): Promise<void> {
-    if (!isPlatformBrowser(this.platformId)) {
-      return;
-    }
+  constructor(private cochesService: CochesService) {}
 
-    try {
-      const respuesta = await fetch('assets/data/modelos.json');
-      this.coches = await respuesta.json() as Supercoche[];
-    } catch (error) {
-      console.error('Error al obtener modelos:', error);
-    }
+  ngOnInit(): void {
+    this.cochesService.obtenerModelos().subscribe({
+      next: modelos => {
+        this.coches = modelos as Supercoche[];
+      },
+      error: error => {
+        console.error('Error al obtener modelos:', error);
+      }
+    });
   }
 
   alternarCard(id: string): void {
