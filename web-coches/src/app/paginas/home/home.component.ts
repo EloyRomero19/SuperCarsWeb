@@ -28,6 +28,12 @@ export class HomeComponent implements AfterViewInit {
 
   rotation = 0;
   radius = 420;
+  isDragging = false;
+
+  private dragStartX = 0;
+  private dragStartRotation = 0;
+  private activePointerId: number | null = null;
+  private readonly dragSensitivity = .35;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object
@@ -64,6 +70,45 @@ export class HomeComponent implements AfterViewInit {
 
   prevSlide() {
     this.rotation += 360 / this.galeria.length;
+  }
+
+  onCarouselPointerDown(event: PointerEvent): void {
+    if (event.button !== 0) {
+      return;
+    }
+
+    this.isDragging = true;
+    this.dragStartX = event.clientX;
+    this.dragStartRotation = this.rotation;
+    this.activePointerId = event.pointerId;
+
+    (event.currentTarget as HTMLElement).setPointerCapture(event.pointerId);
+  }
+
+  onCarouselPointerMove(event: PointerEvent): void {
+    if (!this.isDragging || event.pointerId !== this.activePointerId) {
+      return;
+    }
+
+    const movement = event.clientX - this.dragStartX;
+    this.rotation = this.dragStartRotation + movement * this.dragSensitivity;
+  }
+
+  onCarouselPointerEnd(event: PointerEvent): void {
+    if (!this.isDragging || event.pointerId !== this.activePointerId) {
+      return;
+    }
+
+    const step = 360 / this.galeria.length;
+    this.rotation = Math.round(this.rotation / step) * step;
+    this.isDragging = false;
+    this.activePointerId = null;
+
+    const carousel = event.currentTarget as HTMLElement;
+
+    if (carousel.hasPointerCapture(event.pointerId)) {
+      carousel.releasePointerCapture(event.pointerId);
+    }
   }
 
   getTransform(i: number): string {
