@@ -107,7 +107,15 @@
       GALERÍA EXCLUSIVA
     </h2>
 
-    <div class="carousel-3d">
+    <div
+      class="carousel-3d"
+      [class.is-dragging]="isDragging"
+      (pointerdown)="onCarouselPointerDown($event)"
+      (pointermove)="onCarouselPointerMove($event)"
+      (pointerup)="onCarouselPointerEnd($event)"
+      (pointercancel)="onCarouselPointerEnd($event)"
+      (lostpointercapture)="onCarouselPointerEnd($event)"
+    >
       <div
         class="carousel-track"
         [style.transform]="'rotateY(' + rotation + 'deg)'"
