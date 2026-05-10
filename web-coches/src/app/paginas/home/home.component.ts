@@ -18,12 +18,12 @@ import { RouterLink } from '@angular/router';
 export class HomeComponent implements AfterViewInit {
 
   galeria = [
-    'assets/imagenes/svj.jpg',
-    'assets/imagenes/porsche.jpg',
-    'assets/imagenes/jesko.jpg',
-    'assets/imagenes/f40.jpg',
-    'assets/imagenes/amg.jpg',
-    'assets/imagenes/bmwm8.jpg'
+    'assets/imagenes/svj.png',
+    'assets/imagenes/r8.png',
+    'assets/imagenes/Porsche918spyder.jpeg',
+    'assets/imagenes/gt.png',
+    'assets/imagenes/jesko.png',
+    'assets/imagenes/ferrari812.jpg'
   ];
 
   rotation = 0;
