@@ -8,7 +8,7 @@ import { Supercoche } from '../interfaces/supercoche';
 })
 export class CochesService {
 
-  private modelosUrl = 'assets/data/modelos.json';
+  private modelosUrl = 'data/modelos.json';
   private apiUrl = 'https://api.api-ninjas.com/v1/cars';
   private apiKey = 'TU_API_KEY_AQUI';
 
