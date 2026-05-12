@@ -11,7 +11,7 @@
     <div class="container position-relative z-1 py-5">
       <div class="col-lg-7 pt-5 mt-5">
 
-        <p class="hero-kicker mb-2">
+        <p class="hero-kicker fw-bold text-uppercase mb-2">
           Línea exclusiva
         </p>
 
@@ -33,7 +33,7 @@
 
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
       <div>
-        <p class="hero-kicker mb-2">
+        <p class="hero-kicker fw-bold text-uppercase mb-2">
           Top supercoches
         </p>
 
@@ -70,13 +70,13 @@
                 >
               </div>
 
-              <div class="card-body card-copy">
+              <div class="card-body card-copy d-flex align-items-center justify-content-between gap-3 flex-grow-1 p-4">
                 <div>
-                  <span class="tag">
+                  <span class="tag d-inline-block fw-bold text-uppercase mb-2">
                     {{ coche.etiqueta }}
                   </span>
 
-                  <h3 class="card-title">
+                  <h3 class="card-title fw-bold text-uppercase mb-0">
                     {{ coche.marca }}
                     <strong>{{ coche.modelo }}</strong>
                   </h3>
@@ -96,45 +96,45 @@
             <div class="card-face card-back card text-white">
 
               <div class="card-body d-flex flex-column h-100">
-                <div class="back-top">
+                <div class="back-top d-flex align-items-center gap-3">
                   <div>
-                    <span>{{ coche.marca }}</span>
-                    <h3 class="card-title">{{ coche.modelo }}</h3>
+                    <span class="fw-bold text-uppercase">{{ coche.marca }}</span>
+                    <h3 class="card-title fw-bold text-uppercase mb-0">{{ coche.modelo }}</h3>
                   </div>
                 </div>
 
-                <p class="card-text descripcion">
+                <p class="card-text descripcion my-4">
                   {{ coche.descripcion }}
                 </p>
 
                 <div class="spec-grid">
 
-                  <div>
+                  <div class="p-3 rounded">
                     <span>Potencia</span>
                     <strong>{{ coche.potencia }}</strong>
                   </div>
 
-                  <div>
+                  <div class="p-3 rounded">
                     <span>Vel. máxima</span>
                     <strong>{{ coche.velocidadMaxima }}</strong>
                   </div>
 
-                  <div>
+                  <div class="p-3 rounded">
                     <span>0-100</span>
                     <strong>{{ coche.aceleracion }}</strong>
                   </div>
 
-                  <div>
+                  <div class="p-3 rounded">
                     <span>Motor</span>
                     <strong>{{ coche.motor }}</strong>
                   </div>
 
-                  <div>
+                  <div class="p-3 rounded">
                     <span>Par</span>
                     <strong>{{ coche.par }}</strong>
                   </div>
 
-                  <div>
+                  <div class="p-3 rounded">
                     <span>Tracción</span>
                     <strong>{{ coche.traccion }}</strong>
                   </div>

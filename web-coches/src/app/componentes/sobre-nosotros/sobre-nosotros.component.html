@@ -1,57 +1,65 @@
 <main class="about-page text-white">
-  <section class="studio-hero">
+  <section class="studio-hero d-flex align-items-center py-5">
     <div class="container">
-      <div class="hero-grid">
-        <div class="hero-copy">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-8 hero-copy">
           <p class="eyebrow">Sobre SuperCars</p>
 
-          <h1>
+          <h1 class="fw-bold mb-4">
             Menos ruido.
             <span>Más criterio.</span>
           </h1>
 
-          <p>
+          <p class="text-white-50 fs-5 lh-lg">
             SuperCars es una mirada selectiva al mundo de los superdeportivos:
             modelos, noticias y detalles elegidos por diseño, ingeniería y
             carácter.
           </p>
 
-          <div class="hero-actions">
-            <a routerLink="/modelos" class="btn btn-gradient">
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a routerLink="/modelos" class="btn btn-gradient fw-bold px-4 py-3">
               Ver modelos
             </a>
-            <button type="button" class="btn btn-minimal" (click)="irASeleccion()">
+            <button
+              type="button"
+              class="btn btn-outline-light fw-bold px-4 py-3"
+              (click)="irASeleccion()"
+            >
               Nuestra selección
             </button>
           </div>
         </div>
 
-        <aside class="brand-mark" aria-label="Curaduría visual SuperCars">
+        <aside class="col-lg-4 brand-mark" aria-label="Curaduría visual SuperCars">
           <img
             src="assets/imagenes/pexels-ben-222951360-11963311.jpg?v=2"
             alt="Superdeportivos aparcados en un garaje oscuro"
           >
-          <p>Curaduría de alto rendimiento</p>
+          <p class="fw-bold text-uppercase lh-base mb-0">
+            Curaduría de alto rendimiento
+          </p>
         </aside>
       </div>
     </div>
   </section>
 
-  <section class="manifest-section">
+  <section class="py-5">
     <div class="container">
-      <div class="manifest-grid">
-        <div>
+      <div class="row g-5 pt-5 border-top border-secondary">
+        <div class="col-lg-5">
           <p class="eyebrow">Manifiesto</p>
-          <h2>Una página para quien no busca cualquier coche.</h2>
+          <h2 class="section-title mb-0">
+            Una página para quien no busca cualquier coche.
+          </h2>
         </div>
 
-        <div class="manifest-copy">
-          <p>
+        <div class="col-lg-7 manifest-copy">
+          <p class="text-white-50 lh-lg">
             No nos interesa llenar la web de información sin intención.
             Preferimos ordenar el universo SuperCars con calma: qué merece
             atención, por qué importa y qué lo hace distinto.
           </p>
-          <p>
+          <p class="text-white-50 lh-lg mb-0">
             Prestaciones, historia, silueta, sonido, materiales y presencia.
             Todo cuenta cuando una máquina deja de ser transporte y se convierte
             en icono.
@@ -61,33 +69,52 @@
     </div>
   </section>
 
-  <section id="seleccion-prestige" class="selection-section">
+  <section id="seleccion-prestige" class="py-5">
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading mb-5">
         <p class="eyebrow">Selección Prestige</p>
-        <h2>Tres formas de entender la excelencia.</h2>
+        <h2 class="section-title mb-0">
+          Tres formas de entender la excelencia.
+        </h2>
       </div>
 
-      <div class="selection-lines" *ngIf="seleccionPrestige.length">
-        <article *ngFor="let item of seleccionPrestige; let i = index">
-          <span>0{{ i + 1 }}</span>
-          <div>
-            <p>{{ item.categoria }}</p>
-            <h3>{{ item.titulo }}</h3>
+      <div class="border-top border-secondary" *ngIf="seleccionPrestige.length">
+        <article
+          class="row g-4 py-4 border-bottom border-secondary"
+          *ngFor="let item of seleccionPrestige; let i = index"
+        >
+          <span class="col-lg-1 selection-number fw-bold">
+            0{{ i + 1 }}
+          </span>
+
+          <div class="col-lg-4">
+            <p class="text-white-50 small fw-bold text-uppercase mb-2">
+              {{ item.categoria }}
+            </p>
+            <h3 class="fw-bold mb-0">
+              {{ item.titulo }}
+            </h3>
           </div>
-          <p>{{ item.descripcion }}</p>
+
+          <p class="col-lg-7 text-white-50 lh-lg mb-0">
+            {{ item.descripcion }}
+          </p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="final-statement">
+  <section class="final-statement py-5">
     <div class="container">
-      <p>
+      <div class="d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-4 pt-5 border-top border-secondary">
+      <p class="mb-0">
         Para nosotros, un superdeportivo no se mide solo en segundos.
         Se mide en lo que permanece cuando apagas el motor.
       </p>
-      <a routerLink="/noticias">Explorar historias</a>
+      <a routerLink="/noticias" class="fw-bold text-white text-decoration-none border-bottom border-2">
+        Explorar historias
+      </a>
+      </div>
     </div>
   </section>
 </main>

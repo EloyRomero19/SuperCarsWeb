@@ -23,11 +23,6 @@
     url("/assets/imagenes/senna.jpeg") center/cover no-repeat;
 }
 
-.news-hero .container{
-  position:relative;
-  z-index:1;
-}
-
 .news-hero::after{
   content:"";
   position:absolute;
@@ -65,13 +60,7 @@
 }
 
 /* MODAL */
-.modal-content{
-  background:#12132b;
-  border-radius:18px;
-}
-
 .modal-body p{
-  line-height:1.8;
   color:#ddd;
 }
 

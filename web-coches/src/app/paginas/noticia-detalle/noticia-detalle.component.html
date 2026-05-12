@@ -1,8 +1,8 @@
-<section class="noticia-detalle text-white">
+<section class="noticia-detalle text-white min-vh-100">
   <div class="container py-5" *ngIf="noticia; else sinNoticia">
 
     <article>
-      <header class="article-hero mb-4">
+      <header class="article-hero py-4 mb-4">
         <div class="row g-4 align-items-center">
           <div class="col-lg-6 order-2 order-lg-1">
             <div class="d-flex flex-wrap gap-2 mb-3">
@@ -55,26 +55,26 @@
 
       <div class="row g-4 justify-content-center">
         <div class="col-lg-3">
-          <aside class="article-meta p-4">
-            <span>Fecha</span>
-            <strong>{{ noticia.fecha }}</strong>
-            <hr>
-            <span>Sección</span>
-            <strong>Superdeportivos</strong>
-            <hr>
-            <span>Fuente</span>
-            <strong>SuperCars</strong>
+          <aside class="article-meta rounded-3 p-4">
+            <span class="d-block fw-bold text-uppercase">Fecha</span>
+            <strong class="d-block mt-2">{{ noticia.fecha }}</strong>
+            <hr class="my-3 opacity-100">
+            <span class="d-block fw-bold text-uppercase">Sección</span>
+            <strong class="d-block mt-2">Superdeportivos</strong>
+            <hr class="my-3 opacity-100">
+            <span class="d-block fw-bold text-uppercase">Fuente</span>
+            <strong class="d-block mt-2">SuperCars</strong>
           </aside>
         </div>
 
         <div class="col-lg-8">
-          <div class="article-body p-4 p-md-5">
-            <p>
+          <div class="article-body rounded-3 p-4 p-md-5">
+            <p class="mb-0">
               {{ noticia.contenido }}
             </p>
           </div>
 
-          <div class="article-actions d-flex flex-wrap gap-3 mt-4">
+          <div class="d-flex flex-wrap gap-3 mt-4 pb-5">
             <a routerLink="/noticias" class="btn btn-gradient rounded-pill px-4">
               Volver a noticias
             </a>

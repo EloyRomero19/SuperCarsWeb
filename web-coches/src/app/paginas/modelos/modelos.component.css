@@ -56,8 +56,6 @@
 .tag,
 .back-top span{
   color:#ff00d4;
-  font-weight:800;
-  text-transform:uppercase;
 }
 
 .hero-kicker,
@@ -165,26 +163,9 @@ section h2{
   filter:brightness(.88);
 }
 
-.card-copy,
-.back-top{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.card-copy{
-  justify-content:space-between;
-  padding:22px;
-  flex:1;
-  gap:18px;
-}
-
 .card-copy h3,
 .back-top h3{
-  margin:0;
   font-size:1.35rem;
-  font-weight:900;
-  text-transform:uppercase;
 }
 
 .card-copy strong{
@@ -192,13 +173,10 @@ section h2{
 }
 
 .tag{
-  display:inline-block;
-  margin-bottom:8px;
   font-size:.72rem;
 }
 
 .descripcion{
-  margin:22px 0;
   color:#cfd3df;
 }
 
@@ -210,8 +188,6 @@ section h2{
 }
 
 .spec-grid div{
-  padding:12px;
-  border-radius:8px;
   border:1px solid rgba(255,255,255,.1);
   background:rgba(255,255,255,.05);
 }
