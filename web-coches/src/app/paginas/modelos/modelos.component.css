@@ -79,6 +79,7 @@ section h2{
   position:relative;
   min-height:520px;
   perspective:1200px;
+  border-radius:12px;
 }
 
 .card-orbit{
@@ -124,7 +125,7 @@ section h2{
 }
 
 .card-back{
-  padding:24px;
+  padding:0;
   overflow-y:auto;
   transform:rotateY(180deg);
   background:
@@ -194,15 +195,6 @@ section h2{
   display:inline-block;
   margin-bottom:8px;
   font-size:.72rem;
-}
-
-.back-top img{
-  width:54px;
-  height:54px;
-  padding:8px;
-  border-radius:8px;
-  object-fit:contain;
-  background:white;
 }
 
 .descripcion{

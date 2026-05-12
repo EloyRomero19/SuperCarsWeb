@@ -50,7 +50,7 @@
         *ngFor="let coche of coches; trackBy: trackById"
       >
         <article
-          class="speed-card"
+          class="card speed-card bg-transparent border-0"
           [class.is-flipped]="cardsActivas.includes(coche.id)"
         >
 
@@ -58,25 +58,25 @@
 
           <div class="card-inner">
 
-            <!-- FRONT -->
-            <div class="card-face card-front">
+            <div class="card-face card-front card text-white">
 
               <div class="speed-line"></div>
 
               <div class="card-image-wrap">
                 <img
                   [src]="coche.imagen"
+                  class="card-img-top img-fluid"
                   [alt]="coche.marca + ' ' + coche.modelo"
                 >
               </div>
 
-              <div class="card-copy">
+              <div class="card-body card-copy">
                 <div>
                   <span class="tag">
                     {{ coche.etiqueta }}
                   </span>
 
-                  <h3>
+                  <h3 class="card-title">
                     {{ coche.marca }}
                     <strong>{{ coche.modelo }}</strong>
                   </h3>
@@ -93,67 +93,62 @@
 
             </div>
 
-            <!-- BACK -->
-            <div class="card-face card-back">
+            <div class="card-face card-back card text-white">
 
-              <div class="back-top">
-                <img
-                  *ngIf="coche.logo"
-                  [src]="coche.logo"
-                  [alt]="'Logo ' + coche.marca"
+              <div class="card-body d-flex flex-column h-100">
+                <div class="back-top">
+                  <div>
+                    <span>{{ coche.marca }}</span>
+                    <h3 class="card-title">{{ coche.modelo }}</h3>
+                  </div>
+                </div>
+
+                <p class="card-text descripcion">
+                  {{ coche.descripcion }}
+                </p>
+
+                <div class="spec-grid">
+
+                  <div>
+                    <span>Potencia</span>
+                    <strong>{{ coche.potencia }}</strong>
+                  </div>
+
+                  <div>
+                    <span>Vel. máxima</span>
+                    <strong>{{ coche.velocidadMaxima }}</strong>
+                  </div>
+
+                  <div>
+                    <span>0-100</span>
+                    <strong>{{ coche.aceleracion }}</strong>
+                  </div>
+
+                  <div>
+                    <span>Motor</span>
+                    <strong>{{ coche.motor }}</strong>
+                  </div>
+
+                  <div>
+                    <span>Par</span>
+                    <strong>{{ coche.par }}</strong>
+                  </div>
+
+                  <div>
+                    <span>Tracción</span>
+                    <strong>{{ coche.traccion }}</strong>
+                  </div>
+
+                </div>
+
+                <button
+                  type="button"
+                  class="btn btn-outline-light rounded-pill px-4 mt-auto align-self-start"
+                  (click)="alternarCard(coche.id)"
                 >
-
-                <div>
-                  <span>{{ coche.marca }}</span>
-                  <h3>{{ coche.modelo }}</h3>
-                </div>
+                  Volver
+                </button>
               </div>
-
-              <p class="descripcion">
-                {{ coche.descripcion }}
-              </p>
-
-              <div class="spec-grid">
-
-                <div>
-                  <span>Potencia</span>
-                  <strong>{{ coche.potencia }}</strong>
-                </div>
-
-                <div>
-                  <span>Vel. máxima</span>
-                  <strong>{{ coche.velocidadMaxima }}</strong>
-                </div>
-
-                <div>
-                  <span>0-100</span>
-                  <strong>{{ coche.aceleracion }}</strong>
-                </div>
-
-                <div>
-                  <span>Motor</span>
-                  <strong>{{ coche.motor }}</strong>
-                </div>
-
-                <div>
-                  <span>Par</span>
-                  <strong>{{ coche.par }}</strong>
-                </div>
-
-                <div>
-                  <span>Tracción</span>
-                  <strong>{{ coche.traccion }}</strong>
-                </div>
-
-              </div>
-
-              <button
-                type="button"
-                class="btn btn-outline-light rounded-pill px-4 mt-auto"
-                (click)="alternarCard(coche.id)"
-              >
-                Volver
-              </button>
 
             </div>
 
