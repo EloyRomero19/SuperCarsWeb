@@ -1,23 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CochesService } from '../../servicios/coches.service';
-
-interface Supercoche {
-  id: string;
-  marca: string;
-  modelo: string;
-  imagen: string;
-  logo: string;
-  motor: string;
-  potencia: string;
-  velocidadMaxima: string;
-  aceleracion: string;
-  par: string;
-  traccion: string;
-  peso: string;
-  descripcion: string;
-  etiqueta: string;
-}
+import { Supercoche } from '../../interfaces/supercoche';
 
 @Component({
   selector: 'app-modelos',
@@ -36,7 +20,7 @@ export class ModelosComponent implements OnInit {
   ngOnInit(): void {
     this.cochesService.obtenerModelos().subscribe({
       next: modelos => {
-        this.coches = modelos as Supercoche[];
+        this.coches = modelos;
       },
       error: error => {
         console.error('Error al obtener modelos:', error);
