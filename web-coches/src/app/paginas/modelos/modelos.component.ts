@@ -29,7 +29,7 @@ interface Supercoche {
 export class ModelosComponent implements OnInit {
 
   coches: Supercoche[] = [];
-  cardActiva: string | null = null;
+  cardsActivas: string [] = [];
 
   constructor(private cochesService: CochesService) {}
 
@@ -45,7 +45,12 @@ export class ModelosComponent implements OnInit {
   }
 
   alternarCard(id: string): void {
-    this.cardActiva = this.cardActiva === id ? null : id;
+
+    if(this.cardsActivas.includes(id)){
+      this.cardsActivas = this.cardsActivas.filter(c => c !== id);
+    }else{
+      this.cardsActivas.push(id);
+    }
   }
 
   trackById(_: number, coche: Supercoche): string {
