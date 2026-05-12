@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Supercoche } from '../interfaces/supercoche';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,8 @@ export class CochesService {
 
   constructor(private http: HttpClient) {}
 
-  obtenerModelos(): Observable<any[]> {
-    return this.http.get<any[]>(this.modelosUrl);
+  obtenerModelos(): Observable<Supercoche[]> {
+    return this.http.get<Supercoche[]>(this.modelosUrl);
   }
 
   obtenerCochesFerrari(): Observable<any[]> {
