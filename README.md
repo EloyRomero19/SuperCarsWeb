@@ -1,57 +1,75 @@
 # 🚗 SuperCarsWeb
 
-## 📖 Overview
+![Home](docs/screenshots/home.png)
 
-SuperCarsWeb is a modern web application developed with Angular that allows users to explore a collection of supercars, read automotive news and navigate through different sections of the website using Angular Routing.
+Modern web application developed with **Angular 19** that showcases a collection of luxury and super sports cars. The application features a responsive design, reusable components, dynamic navigation and an automotive news section, providing an engaging browsing experience.
 
-This project was developed as part of the Higher Vocational Training in Web Application Development (DAW).
-
----
-
-## ✨ Features
-
-- Home page
-- Supercars catalogue
-- Automotive news section
-- News detail page
-- Contact page
-- About us section
-- Responsive navigation bar
-- Custom 404 page
-- Responsive design
+> 🎓 Developed as part of the Higher Vocational Training in Web Application Development (DAW).
 
 ---
 
-## 🛠 Technologies
+# ✨ Features
+
+- 🏠 Responsive home page
+- 🚗 Supercars catalogue
+- 📰 Automotive news section
+- 📄 News detail pages
+- 📞 Contact page
+- ℹ️ About us page
+- ❌ Custom 404 page
+- 🔀 Angular Routing
+- 🧩 Reusable components
+- 📱 Responsive design
+- 📋 Form handling
+
+---
+
+# 📸 Screenshots
+
+## 🚗 Supercars Catalogue
+
+![Models](docs/screenshots/modelos.png)
+
+## 📰 News
+
+![News](docs/screenshots/noticias.png)
+
+## 📞 Contact
+
+![Contact](docs/screenshots/contacto.png)
+
+---
+
+# 🛠️ Technologies
 
 - Angular 19
 - TypeScript
 - HTML5
 - CSS3
-- Bootstrap
+- Bootstrap 5
 - Angular Router
 - Angular Forms
 - Express (Angular SSR)
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
-```
+```text
 src/
 │
 ├── componentes/
-│   ├── navbar
-│   ├── footer
-│   ├── sobre-nosotros
-│   └── not-found
+│   ├── navbar/
+│   ├── footer/
+│   ├── sobre-nosotros/
+│   └── not-found/
 │
 ├── paginas/
-│   ├── home
-│   ├── modelos
-│   ├── noticias
-│   ├── noticia-detalle
-│   └── contacto
+│   ├── home/
+│   ├── modelos/
+│   ├── noticias/
+│   ├── noticia-detalle/
+│   └── contacto/
 │
 ├── servicios/
 │
@@ -60,7 +78,7 @@ src/
 
 ---
 
-## 🚀 Installation
+# 🚀 Installation
 
 Clone the repository
 
@@ -74,13 +92,13 @@ Install dependencies
 npm install
 ```
 
-Run the application
+Run the development server
 
 ```bash
 ng serve
 ```
 
-Open
+Open your browser at:
 
 ```
 http://localhost:4200
@@ -88,23 +106,25 @@ http://localhost:4200
 
 ---
 
-## 📚 Learning Objectives
+# 📚 What I Learned
 
-This project allowed me to practice:
+During the development of this project I strengthened my knowledge of:
 
-- Component-based architecture
-- Routing between pages
-- Angular Services
-- Interfaces
+- Angular component architecture
+- TypeScript
+- Routing and navigation
+- Reusable components
 - Responsive web design
-- Project organization
 - Bootstrap integration
-- TypeScript development
+- Frontend project organization
+- Modern web application development
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Eloy Romero**
 
 Junior Software Developer
+
+GitHub: https://github.com/EloyRomero19
